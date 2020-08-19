@@ -9,7 +9,7 @@
         {
             // this._addService(prefixid, type, url, cachelevel, codepage, language, version, communication);
             this._addService("default_typedef.xml", "Base", "form", "./Base/", "", null, "", "0", "0");
-            this._addService("default_typedef.xml", "svc", "JSP", "http://localhost/sampleuiadapter14/sample/", "none", null, "", "", "0");
+            this._addService("default_typedef.xml", "svc", "JSP", "http://localhost/nexWebProject/", "none", null, "", "", "0");
 
             this._component_uri = (this._arg_compurl ? this._arg_compurl : "./nexacro14lib/component/");
             // load components

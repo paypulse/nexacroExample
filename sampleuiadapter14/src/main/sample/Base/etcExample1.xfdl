@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <FDL version="1.5">
   <TypeDefinition url="..\default_typedef.xml"/>
-  <Form id="etcExample1" left="0" top="0" width="764" height="640" titletext="Base::etcExample1" onload="etcExample1_onload">
+  <Form id="etcExample1" left="0" top="0" width="764" height="873" titletext="Base::etcExample1" onload="etcExample1_onload">
     <Layouts>
       <Layout>
         <Button id="Button00" taborder="0" text="←Back" left="80.63%" top="17" right="2.49%" height="30" onclick="Button00_onclick"/>
@@ -45,29 +45,49 @@
         <Button id="Button03" taborder="11" text="Filter" left="35.21%" top="304" right="49.21%" height="23" onclick="Button03_onclick"/>
         <Button id="Button04" taborder="12" text="filter 해제 " left="1.83%" top="337" right="82.2%" height="23" onclick="Button04_onclick"/>
         <Button id="Button05" taborder="13" text="getColumn(0,col1)" left="18.85%" top="337" right="65.45%" height="23" onclick="Button05_onclick"/>
-        <Button id="Button06" taborder="14" text="filter를 이용한 distinct 처리" left="1.83%" top="469" right="75.92%" height="23" style="font:9 Dotum;" onclick="Button06_onclick"/>
-        <Grid id="Grid01" taborder="15" left="1.96%" top="378" right="75.79%" height="88" binddataset="datasetTest2">
+        <Button id="Button06" taborder="14" text="filter를 이용한 distinct 처리" left="25.13%" top="376" right="52.62%" height="23" style="font:9 Dotum;" onclick="Button06_onclick"/>
+        <Grid id="Grid01" taborder="15" left="1.96%" top="378" right="75.92%" height="198" binddataset="datasetTest2">
           <Formats>
             <Format id="default">
               <Columns>
-                <Col size="80"/>
-                <Col size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
               </Columns>
               <Rows>
-                <Row band="head" size="24"/>
-                <Row band="body" size="24"/>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
               </Rows>
               <Band id="head">
-                <Cell col="0" disptype="normal" text="col1"/>
-                <Cell col="1" disptype="normal" text="col2"/>
+                <Cell text="col1"/>
+                <Cell col="1" text="col2"/>
               </Band>
               <Band id="body">
-                <Cell col="0" disptype="normal" text="bind:col1"/>
-                <Cell col="1" disptype="normal" text="bind:col2"/>
+                <Cell text="bind:col1"/>
+                <Cell col="1" text="bind:col2"/>
               </Band>
             </Format>
           </Formats>
         </Grid>
+        <Button id="Button07" taborder="16" text="getSum()" left="25.13%" top="403" right="64.14%" height="24" onclick="Button07_onclick"/>
+        <Button id="Button08" taborder="17" text="getCaseSum" left="36.78%" top="403" right="52.49%" height="24" onclick="Button08_onclick"/>
+        <Button id="Button09" taborder="18" text="rowposition" left="25%" top="435" right="64.27%" height="24" onclick="Button09_onclick"/>
+        <Button id="Button10" taborder="19" text="getRowCount" left="36.78%" top="435" right="52.62%" height="24"/>
+        <Button id="Button11" taborder="20" text="getColumn" left="25.13%" top="467" right="64.27%" height="24"/>
+        <Button id="Button12" taborder="21" text="setColumn" left="36.78%" top="467" right="52.62%" height="24" onclick="Button12_onclick"/>
+        <Button id="Button13" taborder="22" text="findRowExpr" left="25.13%" top="499" right="64.14%" height="24"/>
+        <Button id="Button14" taborder="23" text="findRow" left="36.78%" top="499" right="52.62%" height="24"/>
+        <Button id="Button15" taborder="24" text="appendDataset" left="25.13%" top="527" right="64.14%" height="24"/>
+        <Button id="Button16" taborder="25" text="clearData" left="36.78%" top="527" right="52.62%" height="24"/>
+        <Button id="Button17" taborder="26" text="deleteRow" left="1.96%" top="649" right="87.3%" height="23"/>
+        <Button id="Button18" taborder="27" text="applyChange" left="13.48%" top="648" right="75.92%" height="23"/>
+        <Button id="Button19" taborder="28" text="deleteAll" left="2.09%" top="581" right="87.57%" height="27"/>
+        <Button id="Button20" taborder="29" text="copyData" left="13.48%" top="581" right="75.79%" height="27"/>
+        <Button id="Button21" taborder="30" text="mergeData" left="2.09%" top="616" right="87.57%" height="27"/>
+        <Button id="Button22" taborder="31" text="addRow" left="13.48%" top="616" right="75.79%" height="27"/>
+        <Button id="Button23" taborder="32" text="getDeletedRowCount" left="25.26%" top="581" right="64.01%" height="27"/>
+        <Button id="Button24" taborder="33" text="getRowType" left="25.26%" top="616" right="64.01%" height="27"/>
+        <Button id="Button25" taborder="34" text="getOrgColumn" left="37.04%" top="581" right="52.09%" height="27" onclick="Button25_onclick"/>
+        <Button id="Button26" taborder="35" text="reset" left="36.78%" top="616" right="52.09%" height="28"/>
       </Layout>
     </Layouts>
     <Objects>
@@ -270,7 +290,7 @@
           </Row>
         </Rows>
       </Dataset>
-      <Dataset id="datasetTest2">
+      <Dataset id="datasetTest2" useclientlayout="true">
         <ColumnInfo>
           <Column id="col1" type="STRING" size="256"/>
           <Column id="col2" type="STRING" size="256"/>
@@ -403,7 +423,30 @@ this.Button05_onclick = function(obj:Button, e:nexacro.ClickEventInfo)
 
 this.Button06_onclick = function(obj:Button, e:nexacro.ClickEventInfo)
 {
-	this.datasetTest2.filter();
+	//rowidx : Dataset Expression 예약어다. 
+	this.datasetTest2.filter("rowidx == dataset.findRowExpr(\"col1=='\" + col1 + \"'\")");
+	
+}
+
+//getSum
+this.Button07_onclick = function(obj:Button, e:nexacro.ClickEventInfo)
+{
+	var sum = this.datasetTest2.getSum("col1 > '1' ? col1: '0'");
+	trace("sum : ",sum);
+	
+}
+
+//getCaseSum
+this.Button08_onclick = function(obj:Button, e:nexacro.ClickEventInfo)
+{
+	var caseSum = this.datasetTest2.getCaseSum("col1 > 1","col1") ;
+	trace("case sum :", caseSum);
+}
+
+this.Button09_onclick = function(obj:Button, e:nexacro.ClickEventInfo)
+{
+	var position = this.datasetTest2.rowposition;
+	trace("row position :" , position);
 }
 ]]></Script>
   </Form>

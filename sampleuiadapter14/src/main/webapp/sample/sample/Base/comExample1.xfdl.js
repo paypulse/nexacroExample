@@ -107,7 +107,7 @@
         	this.ds_search.setColumn(0,"keyword", this.Edit00.text);
         	
         	var strSvcId  = "search";
-        	var strSvcUrl = "http://localhost:80/sample/selectSampleList.do";
+        	var strSvcUrl = "svc::selectSampleList.do";
         	//parameter가 될 값
         	var inData 	  = "input1=ds_search";
         	//조회해서 넘어 오게 될 값 
@@ -118,7 +118,7 @@
         	var isAsync   = true;
         	
         	//ajax 같은 nexacro 함수 
-        	this.transaction(strSvcId, strSvcUrl,"", outData, strArg, "", isAsync);
+        	this.transaction(strSvcId, strSvcUrl,inData, outData, strArg, "", isAsync);
         	
 
         }
