@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="treePopupExample" left="0" top="0" width="384" height="407" titletext="Base::treePopupExample" onload="treePopupExample_onload">
+    <Layouts>
+      <Layout>
+        <Static id="Static00" taborder="1" text="ID text" left="29" top="37" width="90" height="23" onclick="Static00_onclick"/>
+        <Edit id="itemID" taborder="2" left="127" top="37" width="208" height="26" displaynulltext="ID " style="cursor:none;"/>
+        <Static id="Static01" taborder="3" text="parent ID" left="28" top="101" width="92" height="23"/>
+        <Edit id="itemParent" taborder="4" left="127" top="101" width="208" height="23" displaynulltext="parent ID"/>
+        <Static id="Static02" taborder="5" text="text" left="29" top="173" width="93" height="28"/>
+        <Edit id="itemText" taborder="6" left="128" top="173" width="208" height="23" displaynulltext="text"/>
+        <Static id="Static03" taborder="7" text="level" left="28" top="237" width="98" height="31"/>
+        <Edit id="itemLevel" taborder="8" left="127" top="243" width="208" height="21" displaynulltext="level"/>
+        <Button id="Button00" taborder="0" text="등록" left="24" top="321" width="131" height="39" onclick="Button00_onclick"/>
+        <Button id="Button01" taborder="9" text="닫기" left="210" top="321" width="131" height="39" onclick="Button01_onclick"/>
+        <Static id="itemIDValidate" taborder="10" text="Static04" left="128" top="70" width="208" height="20" style="color:crimson;" visible="false"/>
+        <Static id="itemParentValidate" taborder="11" text="Static04" left="128" top="123" width="210" height="29" style="color:crimson;" visible="false"/>
+        <Static id="itemTextValidate" taborder="12" text="Static05" left="127" top="192" width="212" height="29" style="color:crimson;" visible="false"/>
+        <Static id="itemLevelValidate" taborder="13" text="Static06" left="127" top="264" width="211" height="32" style="color:crimson;" visible="false"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="paramData" useclientlayout="true">
+        <ColumnInfo>
+          <Column id="id" type="INT" size="256"/>
+          <Column id="parent" type="INT" size="256"/>
+          <Column id="text" type="STRING" size="256"/>
+          <Column id="lvl" type="INT" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.0"><![CDATA[
+this.Button00_onclick = function(obj:Button, e:nexacro.ClickEventInfo)
+{
+	
+	// edit box validation check 
+	var itemID = this.itemID.value;
+	if(itemID == null)
+	{
+		this.itemIDValidate.set_text("값을 입력해주세요");
+		this.itemIDValidate.set_visible("true");
+	}else{
+		this.itemIDValidate.set_visible("false");
+		
+		trace("test : ",nexacro.isNumeric(itemID));
+		trace("itemID :", this.itemID.value);
+		
+		if(nexacro.isNumeric(itemID) == false)
+		{
+			//문자일 경우 
+			this.itemIDValidate.set_text("숫자로 입력해주세요");
+			this.itemIDValidate.set_visible("true");
+		}else
+		{
+			//문자가 아닐 경우
+			this.itemIDValidate.set_visible("false");
+			this.opener.fn_parent_data_setting(this.itemID.value, this.itemParent.value, this.itemText.value, this.itemLevel.value, flag);
+			
+			
+			//팝업 창을 꺼라 
+			this.close();
+		}
+	}
+	
+	
+	
+}
+
+this.Button01_onclick = function(obj:Button, e:nexacro.ClickEventInfo)
+{
+	this.close();
+}
+
+var flag;
+this.treePopupExample_onload = function(obj:Form, e:nexacro.LoadEventInfo)
+{
+	
+	flag = this.getOwnerFrame().param1;
+	var index = this.getOwnerFrame().index;
+	
+	var paramDataset = new Dataset();
+	paramDataset = this.getOwnerFrame().ds;
+	
+	//trace(paramDataset.getColumn(index,"id"));
+	//trace(paramDataset.saveXML());
+	
+	//뒤에 문자형을 붙이면, 문자형으로 들어간다. 
+	//String으로  casting을 해준다. 위/아래 같은 내용 
+	//this.itemID.set_value( paramDataset.getColumn(paramDataset.rowposition,"id").toString());
+	
+	if(flag =='E')
+	{
+		this.Button00.set_text("수정");
+		//itemID는 key이기 때문에 수정 할 수 없다. 
+		this.itemID.set_readonly(true);
+		this.itemID.set_value(paramDataset.getColumn(paramDataset.rowposition,"id")+"");
+		this.itemParent.set_value(paramDataset.getColumn(paramDataset.rowposition,"parent"));
+		this.itemText.set_value(paramDataset.getColumn(paramDataset.rowposition,"text"));
+		this.itemLevel.set_value(paramDataset.getColumn(paramDataset.rowposition,"lvl"));
+	
+	}
+	
+	
+	
+}
+]]></Script>
+  </Form>
+</FDL>

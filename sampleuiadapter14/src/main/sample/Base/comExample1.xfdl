@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="comExample1" left="0" top="0" width="764" height="640" titletext="Base::comExample1" onload="comExample1_onload">
+    <Layouts>
+      <Layout>
+        <Button id="backBtn" taborder="0" text="←back" left="15" top="18" width="111" height="30" onclick="backBtn_onclick"/>
+        <Static id="Static00" taborder="1" text="DataBinding Example" left="188" top="31" width="417" height="29" style="align:center middle;font:bold 16 Dotum;"/>
+        <Grid id="Grid00" taborder="2" left="31" top="128" width="706" height="287" binddataset="Dataset00">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="142"/>
+                <Column size="195"/>
+                <Column size="125"/>
+                <Column size="164"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="ID"/>
+                <Cell col="1" text="NAME"/>
+                <Cell col="2" text="DESCRIPTION"/>
+                <Cell col="3" text="USE_YN"/>
+                <Cell col="4" text="REG_USER"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:ID"/>
+                <Cell col="1" text="bind:NAME"/>
+                <Cell col="2" text="bind:DESCRIPTION"/>
+                <Cell col="3" text="bind:USE_YN"/>
+                <Cell col="4" text="bind:REG_USER"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Combo id="Combo00" taborder="3" text="id" left="4.06%" top="84" right="78.4%" height="18" codecolumn="codecolumn" datacolumn="datacolumn" value="ID">
+          <Dataset id="innerdataset">
+            <ColumnInfo>
+              <Column id="codecolumn" size="256"/>
+              <Column id="datacolumn" size="256"/>
+            </ColumnInfo>
+            <Rows>
+              <Row>
+                <Col id="codecolumn">ID</Col>
+                <Col id="datacolumn">id</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">NAME</Col>
+                <Col id="datacolumn">name</Col>
+              </Row>
+            </Rows>
+          </Dataset>
+        </Combo>
+        <Edit id="Edit00" taborder="4" left="21.99%" top="82" right="56.15%" height="20"/>
+        <Button id="Button00" taborder="5" text="조회" left="78.01%" top="79" right="3.4%" height="30" onclick="Button00_onclick"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="ds_list">
+        <ColumnInfo>
+          <Column id="ID" type="STRING" size="256"/>
+          <Column id="NAME" type="STRING" size="256"/>
+          <Column id="DESCRIPTION" type="STRING" size="256"/>
+          <Column id="USE_YN" type="STRING" size="256"/>
+          <Column id="REG_USER" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_search">
+        <ColumnInfo>
+          <Column id="searchType" type="STRING" size="256"/>
+          <Column id="keyword" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row/>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.0"><![CDATA[
+//조회 BUTTON CLICK
+this.Button00_onclick = function(obj:Button, e:nexacro.ClickEventInfo)
+{
+	this.fnSearch();
+}
+
+this.fnSearch = function()
+{
+	//조건 조회할 data를 dataset에 넣어서 input으로 보낼 예정
+	this.ds_search.setColumn(0,"searchType",this.Combo00.value);
+	this.ds_search.setColumn(0,"keyword", this.Edit00.text);
+	
+	var strSvcId  = "search";
+	var strSvcUrl = "svc::selectSampleList.do";
+	//parameter가 될 값
+	var inData 	  = "input1=ds_search";
+	//조회해서 넘어 오게 될 값 
+	var outData   = "ds_list=output1";
+	var strArg 	  = "";
+	
+	//1.callback 함수는 생략 
+	var isAsync   = true;
+	
+	//ajax 같은 nexacro 함수 
+	this.transaction(strSvcId, strSvcUrl,inData, outData, strArg, "", isAsync);
+	
+
+}
+
+//뒤로가기 button click 
+this.backBtn_onclick = function(obj:Button, e:nexacro.ClickEventInfo)
+{
+	this.go("Base::HelloScreen.xfdl");
+}
+]]></Script>
+  </Form>
+</FDL>

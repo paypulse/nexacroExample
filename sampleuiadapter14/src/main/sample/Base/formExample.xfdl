@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="formExample" left="0" top="0" width="338" height="557" titletext="Base::formExample">
+    <Layouts>
+      <Layout>
+        <Static id="Static00" taborder="0" text="FullName" left="15" top="46" width="81" height="21"/>
+        <Edit id="Edit00" taborder="1" left="104" top="43" width="156" height="27" displaynulltext="이름"/>
+        <Static id="Static01" taborder="2" text="EmployeeID" left="15" top="83" width="83" height="24"/>
+        <MaskEdit id="MaskEdit00" taborder="3" left="104" top="83" width="154" height="28"/>
+        <Static id="Static02" taborder="4" text="HireDate" left="15" top="128" width="81" height="30"/>
+        <Calendar id="Calendar00" taborder="5" left="104" top="128" width="154" height="39"/>
+        <Static id="Static03" taborder="6" text="Married" left="16" top="184" width="83" height="34"/>
+        <CheckBox id="CheckBox00" taborder="7" left="104" top="188" width="107" height="30"/>
+        <Static id="Static04" taborder="8" text="Salary" left="16" top="232" width="52" height="32"/>
+        <MaskEdit id="MaskEdit01" taborder="9" left="104" top="233" width="154" height="30"/>
+        <Static id="Static05" taborder="10" text="Gender" left="15" top="292" width="80" height="41"/>
+        <Radio id="Female" taborder="11" left="105" top="290" width="71" height="43"/>
+        <Radio id="Male" taborder="12" left="187" top="284" width="88" height="55"/>
+        <Static id="Static06" taborder="13" text="DepartmentID" left="13" top="349" width="83" height="35"/>
+        <Combo id="Combo00" taborder="14" text="Combo00" left="101" top="360" width="179" height="19" onitemchanged="Combo00_onitemchanged"/>
+        <Static id="Static07" taborder="15" text="Memo" left="17" top="408" width="82" height="22"/>
+        <TextArea id="TextArea00" taborder="16" left="91" top="404" width="189" height="140"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="ds_emp">
+        <ColumnInfo>
+          <Column id="EMPL_ID" type="STRING" size="5"/>
+          <Column id="FULL_NAME" type="STRING" size="10"/>
+          <Column id="DEPT_ID" type="STRING" size="2"/>
+          <Column id="HIRE_DATE" type="DATE" size="8"/>
+          <Column id="GENDER" type="STRING" size="1"/>
+          <Column id="MARRIED" type="STRING" size="1"/>
+          <Column id="SALARY" type="INT" size="10"/>
+          <Column id="EMPL_MEMO" type="STRING" size="500"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="EMPL_ID">AA001</Col>
+            <Col id="FULL_NAME">SHIN SOO CHOO </Col>
+            <Col id="DEPT_ID">01</Col>
+            <Col id="HIRE_DATE">20011104</Col>
+            <Col id="GENDER">M</Col>
+            <Col id="MARRIED">1</Col>
+            <Col id="SALARY">2000</Col>
+            <Col id="EMPL_MEMO">baseball</Col>
+          </Row>
+          <Row>
+            <Col id="EMPL_ID">BB001</Col>
+            <Col id="FULL_NAME">YUNA KIM</Col>
+            <Col id="DEPT_ID">02</Col>
+            <Col id="HIRE_DATE">20050305</Col>
+            <Col id="GENDER">W</Col>
+            <Col id="MARRIED">0</Col>
+            <Col id="SALARY">3000</Col>
+            <Col id="EMPL_MEMO">figure skating</Col>
+          </Row>
+          <Row>
+            <Col id="EMPL_ID">CC001</Col>
+            <Col id="FULL_NAME">SUMI JO</Col>
+            <Col id="DEPT_ID">03</Col>
+            <Col id="HIRE_DATE">20100506</Col>
+            <Col id="GENDER">W</Col>
+            <Col id="MARRIED">0</Col>
+            <Col id="SALARY">5000</Col>
+            <Col id="EMPL_MEMO">singer</Col>
+          </Row>
+          <Row>
+            <Col id="EMPL_ID">DD001</Col>
+            <Col id="FULL_NAME">JS PARK</Col>
+            <Col id="DEPT_ID">04</Col>
+            <Col id="HIRE_DATE">20101123</Col>
+            <Col id="GENDER">M</Col>
+            <Col id="MARRIED">0</Col>
+            <Col id="SALARY">3500</Col>
+            <Col id="EMPL_MEMO">soccer</Col>
+          </Row>
+          <Row>
+            <Col id="EMPL_ID">EE001</Col>
+            <Col id="FULL_NAME">JY PARK</Col>
+            <Col id="DEPT_ID">05</Col>
+            <Col id="HIRE_DATE">20200101</Col>
+            <Col id="GENDER">M</Col>
+            <Col id="MARRIED">1</Col>
+            <Col id="SALARY">6000</Col>
+            <Col id="EMPL_MEMO">dancer </Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_dept">
+        <ColumnInfo>
+          <Column id="code" type="STRING" size="256"/>
+          <Column id="text" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="code">01</Col>
+            <Col id="text">Sales</Col>
+          </Row>
+          <Row>
+            <Col id="code">02</Col>
+            <Col id="text">IT</Col>
+          </Row>
+          <Row>
+            <Col id="code">03</Col>
+            <Col id="text">Education</Col>
+          </Row>
+          <Row>
+            <Col id="code">04</Col>
+            <Col id="text">Marketing</Col>
+          </Row>
+          <Row>
+            <Col id="code">05</Col>
+            <Col id="text">HR</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Bind>
+      <BindItem id="item0" compid="Edit00" propid="value" datasetid="ds_emp" columnid="FULL_NAME"/>
+    </Bind>
+    <Script type="xscript5.0"><![CDATA[
+this.Combo00_onitemchanged = function(obj:Combo, e:nexacro.ItemChangeEventInfo)
+{
+	
+}
+]]></Script>
+  </Form>
+</FDL>

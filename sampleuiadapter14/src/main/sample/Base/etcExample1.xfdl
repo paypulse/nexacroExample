@@ -1,0 +1,410 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="etcExample1" left="0" top="0" width="764" height="640" titletext="Base::etcExample1" onload="etcExample1_onload">
+    <Layouts>
+      <Layout>
+        <Button id="Button00" taborder="0" text="←Back" left="80.63%" top="17" right="2.49%" height="30" onclick="Button00_onclick"/>
+        <Static id="Static00" taborder="1" text="Combo Example" left="1.57%" top="15" right="82.85%" height="23" style="font:bold 9 Dotum;"/>
+        <Combo id="Combo00" taborder="2" text="Combo00" left="1.44%" top="52" right="84.55%" height="25" innerdataset="@ds_in" codecolumn="value" datacolumn="text" displaynulltext="::select::"/>
+        <Combo id="BigValue" taborder="3" text="Combo01" left="1.44%" top="95" right="84.55%" height="25" displaynulltext="::대분류::" innerdataset="@bigCombo" codecolumn="code" datacolumn="value" onitemchanged="BigValue_onitemchanged"/>
+        <Combo id="middleValue" taborder="4" text="Combo02" left="17.15%" top="95" right="68.85%" height="25" displaynulltext="::중분류::" innerdataset="@middleCombo" codecolumn="code" datacolumn="value" onitemchanged="middleValue_onitemchanged"/>
+        <Combo id="smallValue" taborder="5" text="Combo01" left="33.12%" top="95" right="52.88%" height="25" displaynulltext="::소분류::" innerdataset="@smallCombo" codecolumn="code" datacolumn="value"/>
+        <Combo id="Combo01" taborder="6" left="1.05%" top="133" right="81.54%" height="22" type="search" onitemchanged="Combo01_onitemchanged" innerdataset="@searchCombo" codecolumn="code" datacolumn="value"/>
+        <Static id="Static01" taborder="7" text="Dataset" left="1.18%" top="165" right="73.43%" height="27" style="font:bold 9 Dotum;"/>
+        <Grid id="Grid00" taborder="8" left="1.57%" top="192" right="52.36%" height="107" binddataset="datasetTest">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+              </Columns>
+              <Rows>
+                <Row band="head" size="24"/>
+                <Row band="body" size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell col="0" disptype="normal" text="status"/>
+                <Cell col="1" disptype="normal" text="col1"/>
+                <Cell col="2" disptype="normal" text="col2"/>
+                <Cell col="3" disptype="normal" text="col3"/>
+              </Band>
+              <Band id="body">
+                <Cell col="0" disptype="normal" text="bind:status"/>
+                <Cell col="1" disptype="normal" text="bind:col1"/>
+                <Cell col="2" disptype="normal" text="bind:col2"/>
+                <Cell col="3" disptype="normal" text="bind:col3"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Button id="Button01" taborder="9" text="Ascending" left="1.83%" top="304" right="82.46%" height="23" onclick="Button01_onclick"/>
+        <Button id="Button02" taborder="10" text="Descending" left="18.85%" top="304" right="65.45%" height="23" onclick="Button02_onclick"/>
+        <Button id="Button03" taborder="11" text="Filter" left="35.21%" top="304" right="49.21%" height="23" onclick="Button03_onclick"/>
+        <Button id="Button04" taborder="12" text="filter 해제 " left="1.83%" top="337" right="82.2%" height="23" onclick="Button04_onclick"/>
+        <Button id="Button05" taborder="13" text="getColumn(0,col1)" left="18.85%" top="337" right="65.45%" height="23" onclick="Button05_onclick"/>
+        <Button id="Button06" taborder="14" text="filter를 이용한 distinct 처리" left="1.83%" top="469" right="75.92%" height="23" style="font:9 Dotum;" onclick="Button06_onclick"/>
+        <Grid id="Grid01" taborder="15" left="1.96%" top="378" right="75.79%" height="88" binddataset="datasetTest2">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Col size="80"/>
+                <Col size="80"/>
+              </Columns>
+              <Rows>
+                <Row band="head" size="24"/>
+                <Row band="body" size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell col="0" disptype="normal" text="col1"/>
+                <Cell col="1" disptype="normal" text="col2"/>
+              </Band>
+              <Band id="body">
+                <Cell col="0" disptype="normal" text="bind:col1"/>
+                <Cell col="1" disptype="normal" text="bind:col2"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="ds_in">
+        <ColumnInfo>
+          <Column id="index" type="INT" size="256"/>
+          <Column id="value" type="STRING" size="256"/>
+          <Column id="text" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="index">0</Col>
+            <Col id="value">M</Col>
+            <Col id="text">Men</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="bigCombo">
+        <ColumnInfo>
+          <Column id="code" type="STRING" size="256"/>
+          <Column id="value" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="code">100</Col>
+            <Col id="value">농산품</Col>
+          </Row>
+          <Row>
+            <Col id="code">200</Col>
+            <Col id="value">수산물</Col>
+          </Row>
+          <Row>
+            <Col id="code">300</Col>
+            <Col id="value">축산물</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="middleCombo">
+        <ColumnInfo>
+          <Column id="code" type="STRING" size="256"/>
+          <Column id="value" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="code">101</Col>
+            <Col id="value">콩</Col>
+          </Row>
+          <Row>
+            <Col id="code">102</Col>
+            <Col id="value">상추</Col>
+          </Row>
+          <Row>
+            <Col id="code">103</Col>
+            <Col id="value">배추</Col>
+          </Row>
+          <Row>
+            <Col id="code">201</Col>
+            <Col id="value">고등어</Col>
+          </Row>
+          <Row>
+            <Col id="code">202</Col>
+            <Col id="value">참치</Col>
+          </Row>
+          <Row>
+            <Col id="code">203</Col>
+            <Col id="value">연어</Col>
+          </Row>
+          <Row>
+            <Col id="code">301</Col>
+            <Col id="value">소고기</Col>
+          </Row>
+          <Row>
+            <Col id="code">302</Col>
+            <Col id="value">돼지고기</Col>
+          </Row>
+          <Row>
+            <Col id="code">303</Col>
+            <Col id="value">닭고기</Col>
+          </Row>
+          <Row>
+            <Col id="code">304</Col>
+            <Col id="value">오리고기</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="smallCombo">
+        <ColumnInfo>
+          <Column id="code" type="STRING" size="256"/>
+          <Column id="value" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="code">1000</Col>
+            <Col id="value">콩_국산</Col>
+          </Row>
+          <Row>
+            <Col id="code">1001</Col>
+            <Col id="value">쌀_수입</Col>
+          </Row>
+          <Row>
+            <Col id="code">1002</Col>
+            <Col id="value">보리_국산</Col>
+          </Row>
+          <Row>
+            <Col id="code">2000</Col>
+            <Col id="value">고등어_냉동</Col>
+          </Row>
+          <Row>
+            <Col id="code">2001</Col>
+            <Col id="value">참치_해동</Col>
+          </Row>
+          <Row>
+            <Col id="code">2002</Col>
+            <Col id="value">연어_국산</Col>
+          </Row>
+          <Row>
+            <Col id="code">3000</Col>
+            <Col id="value">소고기_국산</Col>
+          </Row>
+          <Row>
+            <Col id="code">3001</Col>
+            <Col id="value">돼지고기_수입</Col>
+          </Row>
+          <Row>
+            <Col id="code">3002</Col>
+            <Col id="value">닭고기_해동</Col>
+          </Row>
+          <Row>
+            <Col id="code">3003</Col>
+            <Col id="value">오리고기_국산</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="default">
+        <ColumnInfo>
+          <Column id="code" type="STRING" size="256"/>
+          <Column id="value" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row/>
+        </Rows>
+      </Dataset>
+      <Dataset id="searchCombo">
+        <ColumnInfo>
+          <Column id="code" type="STRING" size="256"/>
+          <Column id="value" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="code">100</Col>
+            <Col id="value">test1</Col>
+          </Row>
+          <Row>
+            <Col id="code">200</Col>
+            <Col id="value">test2</Col>
+          </Row>
+          <Row>
+            <Col id="code">300</Col>
+            <Col id="value">search1</Col>
+          </Row>
+          <Row>
+            <Col id="code">400</Col>
+            <Col id="value">search2</Col>
+          </Row>
+          <Row>
+            <Col id="code">500</Col>
+            <Col id="value">output1</Col>
+          </Row>
+          <Row>
+            <Col id="code">600</Col>
+            <Col id="value">output2</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="datasetTest">
+        <ColumnInfo>
+          <Column id="status" type="STRING" size="256"/>
+          <Column id="col1" type="STRING" size="256"/>
+          <Column id="col2" type="STRING" size="256"/>
+          <Column id="col3" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="status">1</Col>
+            <Col id="col1">1</Col>
+            <Col id="col2">2</Col>
+            <Col id="col3">3</Col>
+          </Row>
+          <Row>
+            <Col id="status">1</Col>
+            <Col id="col1">4</Col>
+            <Col id="col2">5</Col>
+            <Col id="col3">6</Col>
+          </Row>
+          <Row>
+            <Col id="status">1</Col>
+            <Col id="col1">7</Col>
+            <Col id="col2">8</Col>
+            <Col id="col3">9</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="datasetTest2">
+        <ColumnInfo>
+          <Column id="col1" type="STRING" size="256"/>
+          <Column id="col2" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="col1">A</Col>
+            <Col id="col2">1</Col>
+          </Row>
+          <Row>
+            <Col id="col1">A</Col>
+            <Col id="col2">2</Col>
+          </Row>
+          <Row>
+            <Col id="col1">A</Col>
+            <Col id="col2">3</Col>
+          </Row>
+          <Row>
+            <Col id="col1">B</Col>
+            <Col id="col2">4</Col>
+          </Row>
+          <Row>
+            <Col id="col1">B</Col>
+            <Col id="col2">5</Col>
+          </Row>
+          <Row>
+            <Col id="col1">C</Col>
+            <Col id="col2">6</Col>
+          </Row>
+          <Row>
+            <Col id="col1">C</Col>
+            <Col id="col2">7</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.0"><![CDATA[
+this.Button00_onclick = function(obj:Button, e:nexacro.ClickEventInfo)
+{
+	this.go("Base::HelloScreen.xfdl");
+}
+
+
+
+
+this.BigValue_onitemchanged = function(obj:Combo, e:nexacro.ItemChangeEventInfo)
+{
+	this.middleValue.set_innerdataset("middleCombo");
+	if(this.middleValue.value != null){
+		
+		this.middleValue.set_text("::중분류::");
+	}
+	
+	if(this.BigValue.value == '100')
+	{
+		this.middleCombo.filter("code <200");
+		this.smallCombo.filter("code >= 1000 && code <2000");
+	}else if(this.BigValue.value =='200')
+	{	
+		this.middleCombo.filter("code>=200 && code <300");
+		this.smallCombo.filter("code >= 2000 && code <3000");
+	
+	}else{
+		this.middleCombo.filter("code>=300 && code <400");
+		this.smallCombo.filter("code >= 3000 && code <4000");
+	}
+}
+
+this.middleValue_onitemchanged = function(obj:Combo, e:nexacro.ItemChangeEventInfo)
+{
+	this.smallValue.set_innerdataset("smallCombo");
+	if(this.smallValue.value != null){
+		this.smallValue.set_text("::소분류::");
+	}
+	
+	if(this.middleValue.value >= '100' && this.middleValue.value < '200')
+	{
+		this.smallCombo.filter("code >= 1000 && code <2000");
+	}else if(this.middleValue.value >= '200' && this.middleValue.value <'300')
+	{
+		this.smallCombo.filter("code >= 2000 && code <3000");
+	}else{
+		this.smallCombo.filter("code >= 3000 && code <4000");
+	}
+	
+	
+	
+	
+}
+
+this.etcExample1_onload = function(obj:Form, e:nexacro.LoadEventInfo)
+{
+	if(new String(this.BigValue.value).valueOf() == "undefined"){
+		this.middleValue.set_innerdataset("default");
+		this.smallValue.set_innerdataset("default");	
+	}
+}
+
+this.Combo01_onitemchanged = function(obj:Combo, e:nexacro.ItemChangeEventInfo)
+{
+	trace(this.Combo01.value);
+}
+
+this.Button01_onclick = function(obj:Button, e:nexacro.ClickEventInfo)
+{
+	this.datasetTest.set_keystring("S:-col1-col2");
+	
+}
+
+this.Button02_onclick = function(obj:Button, e:nexacro.ClickEventInfo)
+{
+	this.datasetTest.set_keystring("S:+col1+col2");
+}
+
+this.Button03_onclick = function(obj:Button, e:nexacro.ClickEventInfo)
+{
+	//filter 예제
+	this.datasetTest.filter("col1 >'1'");
+}
+
+this.Button04_onclick = function(obj:Button, e:nexacro.ClickEventInfo)
+{
+	this.datasetTest.filter("");
+}
+
+this.Button05_onclick = function(obj:Button, e:nexacro.ClickEventInfo)
+{
+	trace(this.datasetTest.getColumn(0,"col1"));
+}
+
+this.Button06_onclick = function(obj:Button, e:nexacro.ClickEventInfo)
+{
+	this.datasetTest2.filter();
+}
+]]></Script>
+  </Form>
+</FDL>

@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="fileDialog" left="0" top="0" width="764" height="640" titletext="Base::fileDialog">
+    <Layouts>
+      <Layout>
+        <Button id="Button00" taborder="0" text="←Back" left="633" top="12" width="123" height="28" onclick="Button00_onclick"/>
+        <Static id="Static00" taborder="1" text="FileDialog" left="26" top="24" width="214" height="45" style="font:bold 11 Dotum;"/>
+        <FileUpload id="FileUpload00" taborder="3" retry="0" index="0" left="27" top="101" width="317" height="35" onlbuttondown="FileUpload00_onlbuttondown" onsuccess="FileUpload00_onsuccess" style="buttontext:selectFile;" onitemchanged="FileUpload00_onitemchanged"/>
+        <Button id="uploadFile" taborder="4" text="uploadFile" left="367" top="101" width="97" height="21" onclick="uploadFile_onclick"/>
+        <Button id="Button02" taborder="5" text="downloadFile" left="487" top="101" width="97" height="21"/>
+        <Grid id="Grid00" taborder="6" left="19" top="172" width="712" height="293" binddataset="ds_file">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="240"/>
+                <Column size="291"/>
+                <Column size="190"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="FILE_PATH"/>
+                <Cell col="1" text="FILE_NAME"/>
+                <Cell col="2" text="FILE_SIZE"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:FILE_PATH"/>
+                <Cell col="1" text="bind:FILE_NAME"/>
+                <Cell col="2" text="bind:FILE_SIZE"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+      </Layout>
+    </Layouts>
+    <InitValue>
+      <FileUpload id="FileUpload00" multiselect="true" taborder="3" tooltiptype="default"/>
+    </InitValue>
+    <Objects>
+      <Dataset id="ds_file">
+        <ColumnInfo>
+          <Column id="FILE_PATH" type="STRING" size="256"/>
+          <Column id="FILE_NAME" type="STRING" size="256"/>
+          <Column id="FILE_SIZE" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.0"><![CDATA[
+this.Button00_onclick = function(obj:Button, e:nexacro.ClickEventInfo)
+{
+	this.go("Base::HelloScreen.xfdl");
+}
+
+
+
+
+//파일 다이얼로그를 통해 파일을 선택 했을때 발생하는 이벤트 이다. 
+this.FileUpload00_onitemchanged = function(obj:FileUpload, e:nexacro.FileUploadItemChangeEventInfo)
+{
+	
+	var sFileName; 
+	var sFilePath;
+	
+	//multiselect :여러개의 아이템을 선택 할 수 있도록 허용할지 여부를 설정하는 속성
+	if(obj.multiselect){
+		var sFileDate = e.newvalue;
+		var sFilePath = sFileDate.split(",");
+		this.ds_file.clearData();
+	}
+	
+	for(var i=0;i<sFilePath.length;i++)
+	{
+		sFilePath = sFilePath[i];
+		var dirExpt = sFilePath.lastIndexOf("\\")+1;
+		sFileName = sFilePath.substr(dirExpt);
+		
+		//daset에 저장 
+		var index = this.ds_file.addRow();
+		this.ds_file.setColumn(index, "FILE_PATH",sFilePath);
+		this.ds_file.setColumn(index, "FILE_NAME",sFileName);
+		
+	}
+	
+}
+
+this.uploadFile_onclick = function(obj:Button, e:nexacro.ClickEventInfo)
+{
+	var svcparam  = "domain="	+ "NexawebInc"
+				  + "&model="	+ "FileUpload"
+				  + "&format="  + "xml"
+				  + "&version=" + "xplatform";
+	
+}
+]]></Script>
+  </Form>
+</FDL>

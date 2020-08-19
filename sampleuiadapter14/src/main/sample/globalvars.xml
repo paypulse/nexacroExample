@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GlobalVariables>
+  <Variable id="Variable0"/>
+  <Dataset id="Dataset0">
+    <ColumnInfo>
+      <Column id="kmkm" type="STRING" size="256"/>
+      <Column id="Column0" type="STRING" size="256"/>
+      <Column id="Column1" type="STRING" size="256"/>
+      <Column id="Column2" type="STRING" size="256"/>
+      <Column id="Column3" type="STRING" size="256"/>
+    </ColumnInfo>
+    <Rows>
+      <Row>
+        <Col id="kmkm">123</Col>
+      </Row>
+    </Rows>
+  </Dataset>
+  <Variable id="plpl" initval="123"/>
+</GlobalVariables>

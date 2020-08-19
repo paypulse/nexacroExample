@@ -1,0 +1,10 @@
+package sample.web;
+
+import java.util.List;
+import java.util.Map;
+
+import javax.annotaion.Resource;
+
+public class SampleController {
+
+}

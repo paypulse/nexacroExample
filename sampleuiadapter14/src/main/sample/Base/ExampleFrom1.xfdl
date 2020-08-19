@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="ExampleForm1" left="0" top="0" width="1024" height="768" titletext="Base::ExampleForm1">
+    <Layouts>
+      <Layout>
+        <Static id="Static00" taborder="0" text="Example 1 Page" left="184" top="17" width="608" height="62" style="align:center middle;font:bold 20 Dotum;"/>
+        <Button id="PreButton" taborder="1" text="←PreButton" left="30" top="26" width="132" height="36" onclick="PreButton_onclick"/>
+        <Button id="nextButton" taborder="2" text="nextButton→" left="812" top="26" width="168" height="36"/>
+        <Div id="Div00" taborder="3" text="Div00" left="13" top="131" width="931" height="341" url="Base::dataGridExample.xfdl" style="align:left middle;"/>
+        <Static id="Static01" taborder="4" text="div and expression example" left="16" top="104" width="300" height="19" style="font:bold 10 Dotum;"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.0"><![CDATA[
+this.PreButton_onclick = function(obj:Button, e:nexacro.ClickEventInfo)
+{
+	this.go("Base::HelloScreen.xfdl");
+	
+}
+]]></Script>
+  </Form>
+</FDL>

@@ -1,0 +1,436 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="etcExample" left="0" top="0" width="844" height="1071" titletext="Base::etcExample">
+    <Layouts>
+      <Layout>
+        <Button id="Button00" taborder="0" text="←Back" left="678" top="6" width="149" height="35" onclick="Button00_onclick"/>
+        <Edit id="Edit00" taborder="1" left="8" top="40" width="170" height="28" oneditclick="Edit00_oneditclick"/>
+        <Static id="Static00" taborder="2" text="Binding Example" left="8" top="8" width="170" height="30" style="font:bold 9 Dotum;"/>
+        <Button id="Button01" taborder="3" text="Bind정보 " left="8" top="84" width="109" height="28" onclick="Button01_onclick"/>
+        <Button id="Button02" taborder="4" text="Edit Binding" left="131" top="84" width="109" height="28" onclick="Button02_onclick"/>
+        <Edit id="Edit01" taborder="5" left="195" top="40" width="170" height="28"/>
+        <Static id="Static01" taborder="6" text="속성 바인딩" left="8" top="128" width="129" height="38" style="font:bold 9 Dotum;"/>
+        <Grid id="Grid00" taborder="7" left="10" top="160" width="349" height="101" binddataset="ds_bind_property">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="TEXT"/>
+                <Cell col="1" text="COLOR"/>
+                <Cell col="2" text="BORDER"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:TEXT"/>
+                <Cell col="1" displaytype="text" text="bind:COLOR"/>
+                <Cell col="2" text="bind:BORDER"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Edit id="Edit02" taborder="8" left="10" top="264" width="151" height="21" oneditclick="Edit02_oneditclick"/>
+        <Static id="Static02" taborder="9" text="Button" left="10" top="299" width="165" height="22" style="font:bold 9 Dotum;"/>
+        <Grid id="Grid01" taborder="10" left="11" top="325" width="108" height="98" binddataset="buttonDataset" oncellclick="Grid01_oncellclick">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Col size="80"/>
+              </Columns>
+              <Rows>
+                <Row band="head" size="24"/>
+                <Row band="body" size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell col="0" disptype="normal" text="col1"/>
+              </Band>
+              <Band id="body">
+                <Cell col="0" disptype="normal" text="bind:col1"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Button id="btnExample" taborder="11" left="126" top="324" width="132" height="25" text="click grid cell"/>
+        <Static id="Static03" taborder="12" text="Calendar" left="10" top="440" width="148" height="24" style="font:bold 9 Dotum;"/>
+        <Grid id="Grid02" taborder="13" left="9" top="464" width="128" height="85" binddataset="calBinding" oncellclick="Grid02_oncellclick">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="131"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="col"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:col"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Calendar id="Calendar00" taborder="14" left="157" top="464" width="115" height="26" oneditclick="Calendar00_oneditclick"/>
+        <Calendar id="Calendar01" taborder="15" left="9" top="563" width="170" height="26"/>
+        <Calendar id="Calendar02" taborder="16" left="9" top="600" width="169" height="237"/>
+        <Calendar id="Calendar03" taborder="17" left="192" top="563" width="170" height="26" value="null" dateformat="yyyy-MM-dd ddd" oneditclick="Calendar03_oneditclick"/>
+        <Calendar id="Calendar04" taborder="18" left="192" top="605" width="170" height="27" value="null" dateformat="yyyy-MM-dd ddd">
+          <Dataset id="innerdataset">
+            <ColumnInfo>
+              <Column id="datecolumn" size="256"/>
+              <Column id="textcolorcolumn" size="256"/>
+              <Column id="backgroundcolumn" size="256"/>
+              <Column id="bordercolumn" size="256"/>
+            </ColumnInfo>
+            <Rows/>
+          </Dataset>
+        </Calendar>
+        <Static id="Static04" taborder="19" text="CheckBox" left="432" top="56" width="178" height="30" style="font:bold 9 Dotum;"/>
+        <Grid id="Grid03" taborder="20" left="435" top="88" width="80" height="75" binddataset="chckbox" oncellclick="Grid03_oncellclick">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Col size="80"/>
+              </Columns>
+              <Rows>
+                <Row band="head" size="24"/>
+                <Row band="body" size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell col="0" disptype="normal" text="chk"/>
+              </Band>
+              <Band id="body">
+                <Cell col="0" disptype="normal" text="bind:chk"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <CheckBox id="CheckBox00" taborder="21" text="CheckBox00" left="568" top="88" width="108" height="34" style="buttonalign:right middle;buttonborder:2 solid #808080ff ;"/>
+        <Grid id="Grid04" taborder="22" left="435" top="183" width="81" height="84" binddataset="chkbox1" oncellclick="Grid04_oncellclick">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Col size="80"/>
+              </Columns>
+              <Rows>
+                <Row band="head" size="24"/>
+                <Row band="body" size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell col="0" disptype="normal" text="chk"/>
+              </Band>
+              <Band id="body">
+                <Cell col="0" disptype="normal" text="bind:chk"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <CheckBox id="CheckBox01" taborder="23" text="CheckBox01" left="568" top="184" width="121" height="32" truevalue="Y" falsevalue="N"/>
+        <Static id="Static05" taborder="24" text="Collection and object" left="432" top="285" width="213" height="43" style="font:bold 9 Dotum;" onclick="Static05_onclick"/>
+        <Button id="Button03" taborder="25" text="Componets" left="428" top="327" width="108" height="34" onclick="Button03_onclick"/>
+        <Button id="Button04" taborder="26" text="all" left="428" top="375" width="108" height="34" onclick="Button04_onclick"/>
+        <Button id="Button05" taborder="27" text="this" left="552" top="327" width="108" height="33" onclick="Button05_onclick"/>
+        <Button id="Button06" taborder="28" text="parent" left="552" top="376" width="108" height="33" onclick="Button06_onclick"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="ds_bindItem">
+        <ColumnInfo>
+          <Column id="col1" type="STRING" size="256"/>
+          <Column id="col2" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="col1">1</Col>
+            <Col id="col2">4</Col>
+          </Row>
+          <Row>
+            <Col id="col1">2</Col>
+            <Col id="col2">5</Col>
+          </Row>
+          <Row>
+            <Col id="col1">3</Col>
+            <Col id="col2">6</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_bind_property">
+        <ColumnInfo>
+          <Column id="TEXT" type="STRING" size="256"/>
+          <Column id="COLOR" type="STRING" size="256"/>
+          <Column id="BORDER" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="TEXT">AAA</Col>
+            <Col id="COLOR">red</Col>
+            <Col id="BORDER">1 solid red</Col>
+          </Row>
+          <Row>
+            <Col id="TEXT">BBB</Col>
+            <Col id="COLOR">green</Col>
+            <Col id="BORDER">3 solid green </Col>
+          </Row>
+          <Row>
+            <Col id="TEXT">CCC</Col>
+            <Col id="COLOR">blue</Col>
+            <Col id="BORDER">5 solid blue</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="buttonDataset">
+        <ColumnInfo>
+          <Column id="col1" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="col1">1</Col>
+          </Row>
+          <Row>
+            <Col id="col1">2</Col>
+          </Row>
+          <Row>
+            <Col id="col1">3</Col>
+          </Row>
+          <Row>
+            <Col id="col1">4</Col>
+          </Row>
+          <Row>
+            <Col id="col1">5</Col>
+          </Row>
+          <Row>
+            <Col id="col1">6</Col>
+          </Row>
+          <Row>
+            <Col id="col1">7</Col>
+          </Row>
+          <Row>
+            <Col id="col1">8</Col>
+          </Row>
+          <Row>
+            <Col id="col1">9</Col>
+          </Row>
+          <Row>
+            <Col id="col1">10</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="calBinding">
+        <ColumnInfo>
+          <Column id="col" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="col">20041201101010</Col>
+          </Row>
+          <Row>
+            <Col id="col">20041231121212</Col>
+          </Row>
+          <Row>
+            <Col id="col">20050101131313</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="date" type="STRING" size="256"/>
+          <Column id="color" type="STRING" size="256"/>
+          <Column id="bkcolor" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="date">20090101</Col>
+            <Col id="color">blue</Col>
+            <Col id="bkcolor">pink</Col>
+          </Row>
+          <Row>
+            <Col id="date">20200101</Col>
+            <Col id="color">blue</Col>
+            <Col id="bkcolor">pink</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="chckbox">
+        <ColumnInfo>
+          <Column id="chk" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="chk">1</Col>
+          </Row>
+          <Row>
+            <Col id="chk">0</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="chkbox1">
+        <ColumnInfo>
+          <Column id="chk" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="chk">N</Col>
+          </Row>
+          <Row>
+            <Col id="chk">Y</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Bind>
+      <BindItem id="item1" compid="Edit02" propid="value" datasetid="ds_bind_property" columnid="TEXT"/>
+      <BindItem id="item2" compid="Edit02" propid="color" datasetid="ds_bind_property" columnid="COLOR"/>
+      <BindItem id="item3" compid="Edit02" propid="border" datasetid="ds_bind_property" columnid="BORDER"/>
+    </Bind>
+    <InitValue>
+      <Calendar id="Calendar00" style="usetrailingday:true;trailingdaycolor:lightgreen;"/>
+      <Calendar id="Calendar01" expr="expr:comp.parent.fn_today()"/>
+      <Calendar id="Calendar02" type="monthonly"/>
+      <Calendar id="Calendar03" expr="expr:comp.parent.fn_today()"/>
+      <Calendar id="Calendar04" innerdataset="@Dataset00" datecolumn="date" textcolorcolumn="color" backgroundcolumn="bkcolor"/>
+    </InitValue>
+    <Script type="xscript5.0"><![CDATA[
+this.Button00_onclick = function(obj:Button, e:nexacro.ClickEventInfo)
+{
+	this.go("Base::HelloScreen.xfdl");
+}
+
+this.Button01_onclick = function(obj:Button, e:nexacro.ClickEventInfo)
+{
+	var objBind = null;
+	var sMsg ="Bind Item 개수 =" + this.binds.length + "\n\n";
+
+	for(var i=0; i< this.binds.length; i++)
+	{
+		objBind = this.binds[i];
+		sMsg += i + ".compid =" + objBind.compid + "\n";
+		sMsg += i + ".propid =" + objBind.propid + "\n";
+		sMsg += i + ".datasetid =" + objBind.datasetid + "\n";
+		sMsg += i + ".columnid =" + objBind.columnid + "\n";
+		sMsg +="\n";
+	}
+	alert(sMsg);
+}
+
+
+
+this.Button02_onclick = function(obj:Button, e:nexacro.ClickEventInfo)
+{
+	var objBind = null;
+	var sMsg = "";
+	for(var i=0; i< this.binds.length;i++)
+	{
+		if(this.binds[i].compid == "Edit01" && this.binds[i].propid =="value")
+		{
+			objBind = this.binds[i];
+			break;
+		}
+	}
+	
+	if(objBind != null)
+	{
+		sMsg += "Dataset =" + objBind.datasetid + "\n";
+		sMsg += "Column = " + objBind.columnid;
+		alert(sMsg);
+	
+	}
+	
+	
+}
+
+this.Grid01_oncellclick = function(obj:Grid, e:nexacro.GridClickEventInfo)
+{
+	var rowposition = this.buttonDataset.rowposition;
+	var columnData = this.buttonDataset.getColumn(rowposition);
+	this.btnExample.set_text(columnData); 
+}
+
+this.Grid02_oncellclick = function(obj:Grid, e:nexacro.GridClickEventInfo)
+{
+	var rowposition = this.calBinding.rowposition;
+	var columnData = this.calBinding.getColumn(rowposition);
+	this.Calendar00.set_value(columnData);
+	
+	
+}
+
+this.fn_today = function()
+{
+	var objDate = new Date();
+	return this.fn_toString(objDate);
+}
+
+this.fn_toString = function(objDate)
+{
+	var sRtn = objDate.getFullYear() 
+			+ (objDate.getMonth()+1).toString().padLeft(2,"0")
+			+ objDate.getDate().toString().padLeft(2, "0");
+	
+	this.Calendar03.set_dateformat("yyyy/MM/dd");
+	return sRtn;
+}
+
+
+
+this.Grid03_oncellclick = function(obj:Grid, e:nexacro.GridClickEventInfo)
+{
+	var rowposition = this.chckbox.rowposition;
+	var columnData = this.chckbox.getColumn(rowposition);
+	
+	this.CheckBox00.set_value(columnData);
+}
+
+this.Grid04_oncellclick = function(obj:Grid, e:nexacro.GridClickEventInfo)
+{
+	var rowposition = this.chkbox1.rowposition;
+	var columnData = this.chkbox1.getColumn(rowposition);
+	
+	if(columnData == 'Y'){
+		trace(columnData);
+		this.CheckBox01.set_value(columnData);
+	}else{
+		trace(columnData);
+		this.CheckBox01.set_value(columnData);
+	}
+}
+
+this.Button03_onclick = function(obj:Button, e:nexacro.ClickEventInfo)
+{
+	var arrComponents = this.components;
+	for(var i=0;i< arrComponents.length;i++)
+	{
+		if(arrComponents[i] instanceof Static && arrComponents[i].name <= "Static02")
+		{
+			arrComponents[i].set_text("a");
+		}
+	}
+	alert("화면내 컴포넌트 총 개수 =" + arrComponents.length);
+}
+
+
+
+this.Button04_onclick = function(obj:Button, e:nexacro.ClickEventInfo)
+{
+	alert("화면내 object 총개수 = " + this.all.length);
+}
+
+this.Button05_onclick = function(obj:Button, e:nexacro.ClickEventInfo)
+{
+	alert(this.Static00.text);
+}
+
+this.Button06_onclick = function(obj:Button, e:nexacro.ClickEventInfo)
+{
+	alert(this.parent);
+}
+]]></Script>
+  </Form>
+</FDL>

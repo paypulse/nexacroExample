@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="popupExample1" left="0" top="0" width="403" height="545" titletext="Base::popupExample1" onload="popupExample1_onload">
+    <Layouts>
+      <Layout>
+        <Static id="Static00" taborder="0" text="PopupWindow" left="32.75%" top="7" right="33.25%" height="25" style="align:center middle;font:bold 10 Dotum;"/>
+        <Grid id="Grid00" taborder="1" left="2.73%" top="50" right="3.23%" height="160" binddataset="ds_popupData">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="EMPL_ID"/>
+                <Cell col="1" text="FULL_NAME"/>
+                <Cell col="2" text="DEPT_ID"/>
+                <Cell col="3" text="HIRE_DATE"/>
+                <Cell col="4" text="GENDER"/>
+                <Cell col="5" displaytype="normal" text="MARRIED"/>
+                <Cell col="6" text="SALARY"/>
+                <Cell col="7" text="EMPL_MEMO"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:EMPL_ID" mask="AA-###"/>
+                <Cell col="1" text="bind:FULL_NAME"/>
+                <Cell col="2" text="bind:DEPT_ID"/>
+                <Cell col="3" text="bind:HIRE_DATE"/>
+                <Cell col="4" text="bind:GENDER"/>
+                <Cell col="5" displaytype="checkbox" text="bind:MARRIED"/>
+                <Cell col="6" text="bind:SALARY"/>
+                <Cell col="7" text="bind:EMPL_MEMO"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Static id="Static01" taborder="2" text="EmployID" left="2.48%" top="224" right="82.13%" height="17"/>
+        <Static id="Static02" taborder="3" text="Employee Name" left="2.23%" top="252" right="74.69%" height="24"/>
+        <Static id="Static03" taborder="4" text="DEPT" left="2.48%" top="286" right="83.13%" height="21"/>
+        <Static id="Static04" taborder="5" text="Gender" left="2.23%" top="315" right="83.13%" height="37"/>
+        <Static id="Static05" taborder="6" text="Memo" left="2.73%" top="382" right="85.11%" height="31"/>
+        <Static id="Static06" taborder="7" text="Salary" left="2.98%" top="448" right="85.86%" height="21"/>
+        <Static id="Static07" taborder="8" text="Married" left="2.98%" top="482" right="85.11%" height="22"/>
+        <Edit id="empName" taborder="10" left="30.27%" top="260" right="9.18%" height="20" style="align:right middle;" readonly="true"/>
+        <TextArea id="memo" taborder="13" left="30.02%" top="391" right="8.68%" height="58" readonly="true"/>
+        <Edit id="salary" taborder="14" left="30.02%" top="457" right="9.18%" height="20" style="align:right middle;" readonly="true"/>
+        <CheckBox id="married" taborder="15" left="30.02%" top="482" right="45.66%" height="26"/>
+        <Button id="Button00" taborder="16" text="닫기" left="73.45%" top="512" right="3.23%" height="24" onclick="Button00_onclick"/>
+        <TextArea id="dept" taborder="17" left="29.78%" top="286" right="9.43%" height="23" style="align:right top;" readonly="true"/>
+        <Radio id="genderRa" taborder="18" left="30.27%" top="322" right="14.14%" height="24" codecolumn="codecolumn" datacolumn="datacolumn" direction="vertical" enable="true" readonly="true">
+          <Dataset id="innerdataset">
+            <ColumnInfo>
+              <Column id="codecolumn" size="256"/>
+              <Column id="datacolumn" size="256"/>
+            </ColumnInfo>
+            <Rows>
+              <Row>
+                <Col id="codecolumn">W</Col>
+                <Col id="datacolumn">Female</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">M</Col>
+                <Col id="datacolumn">Male</Col>
+              </Row>
+            </Rows>
+          </Dataset>
+        </Radio>
+        <MaskEdit id="empID" taborder="19" left="30.27%" top="232" right="9.18%" height="23" type="string" mask="AA-###" readonly="true"/>
+        <Static id="Static08" taborder="20" text="HireDate" left="2.73%" top="357" right="83.37%" height="20"/>
+        <Calendar id="hireDate" taborder="21" left="29.78%" top="354" right="9.43%" height="25" readonly="true"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="ds_popupData">
+        <ColumnInfo>
+          <Column id="EMPL_ID" type="STRING" size="5"/>
+          <Column id="FULL_NAME" type="STRING" size="10"/>
+          <Column id="DEPT_ID" type="STRING" size="2"/>
+          <Column id="HIRE_DATE" type="DATE" size="8"/>
+          <Column id="GENDER" type="STRING" size="1"/>
+          <Column id="MARRIED" type="STRING" size="1"/>
+          <Column id="SALARY" type="INT" size="10"/>
+          <Column id="EMPL_MEMO" type="STRING" size="500"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_dept">
+        <ColumnInfo>
+          <Column id="code" type="STRING" size="256"/>
+          <Column id="text" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="code">01</Col>
+            <Col id="text">Sales</Col>
+          </Row>
+          <Row>
+            <Col id="code">02</Col>
+            <Col id="text">IT</Col>
+          </Row>
+          <Row>
+            <Col id="code">03</Col>
+            <Col id="text">Education</Col>
+          </Row>
+          <Row>
+            <Col id="code">04</Col>
+            <Col id="text">Marketing</Col>
+          </Row>
+          <Row>
+            <Col id="code">05</Col>
+            <Col id="text">HR</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.0"><![CDATA[
+this.Button00_onclick = function(obj:Button, e:nexacro.ClickEventInfo)
+{
+	this.close();
+}
+
+this.popupExample1_onload = function(obj:Form, e:nexacro.LoadEventInfo)
+{	
+
+	
+	//받아온 Dataset
+	var parentDataset = new Dataset();
+	parentDataset = this.getOwnerFrame().param1;
+	
+	//Dataset copy 하기 		
+	var rowDataset = this.ds_popupData.addRow();
+	var addRowIndex = parentDataset.rowposition;
+	this.ds_popupData.copyRow(rowDataset, parentDataset);
+	
+	/*Form에 Dataset 내용 binding 하기 */
+	this.empID.set_value(this.ds_popupData.getColumn(addRowIndex,"EMPL_ID" ));
+	
+	//mask edit box는 type을 string으로 바꿔야 한다. 
+	this.empName.set_value(this.ds_popupData.getColumn(addRowIndex,"FULL_NAME") );
+	
+	var deptColumn = this.ds_popupData.getColumn(this.ds_popupData.rowposition,"DEPT_ID"); //01
+	this.dept.set_value(this.ds_dept.getColumn(this.ds_dept.findRow("code",deptColumn), "text"));
+	
+	this.genderRa.set_value(this.ds_popupData.getColumn(this.ds_popupData.rowposition,"GENDER"));
+	this.hireDate.set_value(this.ds_popupData.getColumn(this.ds_popupData.rowposition,"HIRE_DATE"));
+	this.memo.set_value(this.ds_popupData.getColumn(this.ds_popupData.rowposition,"EMPL_MEMO"));
+	this.salary.set_value(this.ds_popupData.getColumn(this.ds_popupData.rowposition,"SALARY"));
+	
+	this.married.set_readonly("true");
+	this.married.set_value(this.ds_popupData.getColumn(this.ds_popupData.rowposition,"MARRIED"));
+	
+	
+}
+]]></Script>
+  </Form>
+</FDL>

@@ -1,0 +1,5 @@
+package nexacroSample.service.impl;
+
+public interface SampleMapper {
+
+}

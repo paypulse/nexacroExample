@@ -1,0 +1,11 @@
+package nexacroSample.web;
+
+import java.util.List;
+import java.util.Map;
+
+import javax.annotation.Resource;
+
+
+public class SampleController {
+
+}

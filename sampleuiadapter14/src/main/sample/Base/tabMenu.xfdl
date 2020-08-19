@@ -1,0 +1,279 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="tabMenu" left="0" top="0" width="764" height="640" titletext="Base::tabMenu">
+    <Layouts>
+      <Layout>
+        <Button id="Button00" taborder="0" text="←Back" left="624" top="12" width="119" height="36" onclick="Button00_onclick"/>
+        <Tab id="tabMenu" taborder="1" left="35" top="373" width="709" height="231" tabindex="0" scrollbars="autoboth" multiline="true" visible="false">
+          <Tabpages>
+            <Tabpage id="tabpage1" text="Form Binding">
+              <Layouts>
+                <Layout width="707" height="207">
+                  <Static id="Static00" taborder="0" text="EMPL_ID" left="20" top="34" width="56" height="24"/>
+                  <Static id="Static01" taborder="2" text="FULL_NAME" left="13" top="66" width="79" height="30"/>
+                  <Edit id="fullName" taborder="3" left="92" top="69" width="144" height="24" readonly="true" style="align:right middle;"/>
+                  <Static id="Static02" taborder="4" text="DEPT" left="16" top="109" width="68" height="29"/>
+                  <Edit id="dept" taborder="5" left="92" top="109" width="144" height="23" readonly="true" style="align:right middle;"/>
+                  <Static id="Static03" taborder="6" text="HIRE_DATE" left="13" top="152" width="71" height="28"/>
+                  <Calendar id="hireDate" taborder="7" left="92" top="156" width="144" height="28" readonly="true" style="align:right middle;"/>
+                  <Static id="Static04" taborder="8" text="GENDER" left="332" top="28" width="58" height="28"/>
+                  <Radio id="genderRadio" taborder="9" left="428" top="27" width="202" height="29" codecolumn="codecolumn" datacolumn="datacolumn" direction="vertical" readonly="true">
+                    <Dataset id="innerdataset">
+                      <ColumnInfo>
+                        <Column id="codecolumn" size="256"/>
+                        <Column id="datacolumn" size="256"/>
+                      </ColumnInfo>
+                      <Rows>
+                        <Row>
+                          <Col id="codecolumn">W</Col>
+                          <Col id="datacolumn">Female</Col>
+                        </Row>
+                        <Row>
+                          <Col id="codecolumn">M</Col>
+                          <Col id="datacolumn">Male</Col>
+                        </Row>
+                      </Rows>
+                    </Dataset>
+                  </Radio>
+                  <Static id="Static05" taborder="10" text="MARRIED" left="333" top="68" width="63" height="26"/>
+                  <CheckBox id="married" taborder="11" left="428" top="66" width="34" height="29" readonly="true"/>
+                  <Static id="Static06" taborder="12" text="SALARY" left="333" top="106" width="58" height="21"/>
+                  <Edit id="salary" taborder="13" left="428" top="100" width="144" height="23" readonly="true"/>
+                  <Static id="Static07" taborder="14" text="EMPL_MEMO" left="333" top="135" width="85" height="27"/>
+                  <Edit id="memo" taborder="15" left="428" top="138" width="216" height="46" readonly="true"/>
+                  <MaskEdit id="empId" taborder="16" left="92" top="30" width="144" height="25" mask="AA-###" readonly="true" type="string"/>
+                </Layout>
+              </Layouts>
+            </Tabpage>
+            <Tabpage id="tabpage2" text="GridView">
+              <Layouts>
+                <Layout>
+                  <Grid id="Grid00" taborder="0" left="13" top="17" width="677" height="178" binddataset="cp_emp">
+                    <Formats>
+                      <Format id="default">
+                        <Columns>
+                          <Column size="80"/>
+                          <Column size="80"/>
+                          <Column size="80"/>
+                          <Column size="80"/>
+                          <Column size="80"/>
+                          <Column size="80"/>
+                          <Column size="80"/>
+                          <Column size="80"/>
+                        </Columns>
+                        <Rows>
+                          <Row size="24" band="head"/>
+                          <Row size="24"/>
+                        </Rows>
+                        <Band id="head">
+                          <Cell text="EMPL_ID"/>
+                          <Cell col="1" text="FULL_NAME"/>
+                          <Cell col="2" text="DEPT_ID"/>
+                          <Cell col="3" text="HIRE_DATE"/>
+                          <Cell col="4" text="GENDER"/>
+                          <Cell col="5" text="MARRIED"/>
+                          <Cell col="6" text="SALARY"/>
+                          <Cell col="7" text="EMPL_MEMO"/>
+                        </Band>
+                        <Band id="body">
+                          <Cell text="bind:EMPL_ID" mask="AA-###"/>
+                          <Cell col="1" text="bind:FULL_NAME"/>
+                          <Cell col="2" text="bind:DEPT_ID"/>
+                          <Cell col="3" text="bind:HIRE_DATE"/>
+                          <Cell col="4" displaytype="normal" text="bind:GENDER"/>
+                          <Cell col="5" displaytype="checkbox" text="bind:MARRIED"/>
+                          <Cell col="6" text="bind:SALARY"/>
+                          <Cell col="7" text="bind:EMPL_MEMO"/>
+                        </Band>
+                      </Format>
+                    </Formats>
+                  </Grid>
+                </Layout>
+              </Layouts>
+            </Tabpage>
+          </Tabpages>
+        </Tab>
+        <Grid id="Grid00" taborder="2" binddataset="ds_emp" oncellclick="Grid00_oncellclick" left="33" top="79" width="711" height="257">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="74"/>
+                <Column size="107"/>
+                <Column size="94"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="EMPL_ID"/>
+                <Cell col="1" text="FULL_NAME"/>
+                <Cell col="2" text="DEPT_ID"/>
+                <Cell col="3" text="HIRE_DATE"/>
+                <Cell col="4" text="GENDER"/>
+                <Cell col="5" text="MARRIED"/>
+                <Cell col="6" text="SALARY"/>
+                <Cell col="7" text="EMPL_MEMO"/>
+                <Cell col="8" displaytype="normal" text="상세보기"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:EMPL_ID" mask="AA-###"/>
+                <Cell col="1" text="bind:FULL_NAME"/>
+                <Cell col="2" text="bind:DEPT_ID"/>
+                <Cell col="3" text="bind:HIRE_DATE"/>
+                <Cell col="4" text="bind:GENDER"/>
+                <Cell col="5" text="bind:MARRIED"/>
+                <Cell col="6" text="bind:SALARY"/>
+                <Cell col="7" text="bind:EMPL_MEMO"/>
+                <Cell col="8" displaytype="button" style="color:black;color2:black;controlcolor:black;" text="view"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="ds_emp" useclientlayout="true">
+        <ColumnInfo>
+          <Column id="EMPL_ID" type="STRING" size="256"/>
+          <Column id="FULL_NAME" type="STRING" size="256"/>
+          <Column id="DEPT_ID" type="STRING" size="256"/>
+          <Column id="HIRE_DATE" type="DATE" size="256"/>
+          <Column id="GENDER" type="STRING" size="256"/>
+          <Column id="MARRIED" type="STRING" size="256"/>
+          <Column id="SALARY" type="INT" size="256"/>
+          <Column id="EMPL_MEMO" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="EMPL_ID">AA001</Col>
+            <Col id="FULL_NAME">SHIN SOO CHOO </Col>
+            <Col id="DEPT_ID">01</Col>
+            <Col id="HIRE_DATE">20011104</Col>
+            <Col id="GENDER">M</Col>
+            <Col id="MARRIED">1</Col>
+            <Col id="SALARY">2000</Col>
+            <Col id="EMPL_MEMO">baseball</Col>
+          </Row>
+          <Row>
+            <Col id="EMPL_ID">BB001</Col>
+            <Col id="FULL_NAME">YUNA KIM</Col>
+            <Col id="DEPT_ID">02</Col>
+            <Col id="HIRE_DATE">20050305</Col>
+            <Col id="GENDER">W</Col>
+            <Col id="MARRIED">0</Col>
+            <Col id="SALARY">3000</Col>
+            <Col id="EMPL_MEMO">figure skating</Col>
+          </Row>
+          <Row>
+            <Col id="EMPL_ID">CC001</Col>
+            <Col id="FULL_NAME">SUMI JO </Col>
+            <Col id="DEPT_ID">03</Col>
+            <Col id="HIRE_DATE">20100506</Col>
+            <Col id="GENDER">W</Col>
+            <Col id="MARRIED">0</Col>
+            <Col id="SALARY">5000</Col>
+            <Col id="EMPL_MEMO">singer</Col>
+          </Row>
+          <Row>
+            <Col id="EMPL_ID">DD001</Col>
+            <Col id="FULL_NAME">JS PARK</Col>
+            <Col id="DEPT_ID">04</Col>
+            <Col id="HIRE_DATE">20101123</Col>
+            <Col id="GENDER">M</Col>
+            <Col id="MARRIED">0</Col>
+            <Col id="SALARY">3500</Col>
+            <Col id="EMPL_MEMO">soccer</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_dept" useclientlayout="true">
+        <ColumnInfo>
+          <Column id="code" type="STRING" size="256"/>
+          <Column id="text" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="code">01</Col>
+            <Col id="text">Sales</Col>
+          </Row>
+          <Row>
+            <Col id="code">02</Col>
+            <Col id="text">IT</Col>
+          </Row>
+          <Row>
+            <Col id="code">03</Col>
+            <Col id="text">Education</Col>
+          </Row>
+          <Row>
+            <Col id="code">04</Col>
+            <Col id="text">Marketing</Col>
+          </Row>
+          <Row>
+            <Col id="code">05</Col>
+            <Col id="text">HR</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="cp_emp" useclientlayout="true">
+        <ColumnInfo>
+          <Column id="EMPL_ID" type="STRING" size="256"/>
+          <Column id="FULL_NAME" type="STRING" size="256"/>
+          <Column id="DEPT_ID" type="STRING" size="256"/>
+          <Column id="HIRE_DATE" type="DATE" size="256"/>
+          <Column id="GENDER" type="STRING" size="256"/>
+          <Column id="MARRIED" type="STRING" size="256"/>
+          <Column id="SALARY" type="INT" size="256"/>
+          <Column id="EMPL_MEMO" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.0"><![CDATA[
+this.Button00_onclick = function(obj:Button, e:nexacro.ClickEventInfo)
+{
+	this.go("Base::HelloScreen.xfdl");
+}
+
+this.Grid00_oncellclick = function(obj:Grid, e:nexacro.GridClickEventInfo)
+{	
+	
+	if(this.Grid00.getCellProperty("body",e.cell,"displaytype") == "button")
+	{
+		//Grid의 상세보기 버튼이 눌리면 화면에 보여줘라
+		this.tabMenu.set_visible("true");
+		
+		//tabpage1
+		//Form Binding tab안의 form에 binding 해준다. 
+		this.tabMenu.tabpage1.empId.set_value(this.ds_emp.getColumn(this.ds_emp.rowposition,"EMPL_ID"));
+		
+		this.tabMenu.tabpage1.fullName.set_value(this.ds_emp.getColumn(this.ds_emp.rowposition,"FULL_NAME"));
+		
+		var deptID = this.ds_emp.getColumn(this.ds_emp.rowposition,"DEPT_ID");
+		var searchIndex = this.ds_dept.findRow("code",deptID);
+		this.tabMenu.tabpage1.dept.set_value(this.ds_dept.getColumn(searchIndex,"text"));
+		
+		this.tabMenu.tabpage1.hireDate.set_value(this.ds_emp.getColumn(this.ds_emp.rowposition,"HIRE_DATE"));
+		this.tabMenu.tabpage1.genderRadio.set_value(this.ds_emp.getColumn(this.ds_emp.rowposition,"GENDER"));
+		this.tabMenu.tabpage1.married.set_value(this.ds_emp.getColumn(this.ds_emp.rowposition,"MARRIED"));
+		this.tabMenu.tabpage1.salary.set_value(this.ds_emp.getColumn(this.ds_emp.rowposition,"SALARY"));
+		this.tabMenu.tabpage1.memo.set_value(this.ds_emp.getColumn(this.ds_emp.rowposition,"EMPL_MEMO"));
+		
+		
+		//tabpage2
+		this.cp_emp.clearData();
+		var addcopyrow = this.cp_emp.addRow();
+		this.cp_emp.copyRow(addcopyrow, this.ds_emp,this.ds_emp.rowposition);
+		
+		
+	}
+}
+]]></Script>
+  </Form>
+</FDL>
