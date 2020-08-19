@@ -45,8 +45,8 @@
         <Button id="Button03" taborder="11" text="Filter" left="35.21%" top="304" right="49.21%" height="23" onclick="Button03_onclick"/>
         <Button id="Button04" taborder="12" text="filter 해제 " left="1.83%" top="337" right="82.2%" height="23" onclick="Button04_onclick"/>
         <Button id="Button05" taborder="13" text="getColumn(0,col1)" left="18.85%" top="337" right="65.45%" height="23" onclick="Button05_onclick"/>
-        <Button id="Button06" taborder="14" text="filter를 이용한 distinct 처리" left="25.13%" top="376" right="52.62%" height="23" style="font:9 Dotum;" onclick="Button06_onclick"/>
-        <Grid id="Grid01" taborder="15" left="1.96%" top="378" right="75.92%" height="198" binddataset="datasetTest2">
+        <Button id="Button06" taborder="14" text="filter를 이용한 distinct 처리" left="24.87%" top="484" right="52.88%" height="23" style="font:9 Dotum;" onclick="Button06_onclick"/>
+        <Grid id="Grid01" taborder="15" left="1.83%" top="481" right="76.05%" height="198" binddataset="datasetTest2">
           <Formats>
             <Format id="default">
               <Columns>
@@ -68,27 +68,28 @@
             </Format>
           </Formats>
         </Grid>
-        <Button id="Button07" taborder="16" text="getSum()" left="25.13%" top="403" right="64.14%" height="24" onclick="Button07_onclick"/>
-        <Button id="Button08" taborder="17" text="getCaseSum" left="36.78%" top="403" right="52.49%" height="24" onclick="Button08_onclick"/>
-        <Button id="Button09" taborder="18" text="rowposition" left="25%" top="435" right="64.27%" height="24" onclick="Button09_onclick"/>
-        <Button id="Button10" taborder="19" text="getRowCount" left="36.78%" top="435" right="52.62%" height="24" onclick="Button10_onclick"/>
-        <Button id="Button11" taborder="20" text="getColumn" left="25.13%" top="467" right="64.27%" height="24" onclick="Button11_onclick"/>
-        <Button id="Button12" taborder="21" text="setColumn" left="36.78%" top="467" right="52.62%" height="24" onclick="Button12_onclick"/>
-        <Button id="Button13" taborder="22" text="findRowExpr" left="25.13%" top="499" right="64.14%" height="24" onclick="Button13_onclick"/>
-        <Button id="Button14" taborder="23" text="findRow" left="36.78%" top="499" right="52.62%" height="24"/>
-        <Button id="Button15" taborder="24" text="appendDataset" left="25.13%" top="527" right="64.14%" height="24"/>
-        <Button id="Button16" taborder="25" text="clearData" left="36.78%" top="527" right="52.62%" height="24"/>
-        <Button id="Button17" taborder="26" text="deleteRow" left="1.96%" top="649" right="87.3%" height="23"/>
-        <Button id="Button18" taborder="27" text="applyChange" left="13.48%" top="648" right="75.92%" height="23"/>
-        <Button id="Button19" taborder="28" text="deleteAll" left="2.09%" top="581" right="87.57%" height="27"/>
-        <Button id="Button20" taborder="29" text="copyData" left="13.48%" top="581" right="75.79%" height="27"/>
-        <Button id="Button21" taborder="30" text="mergeData" left="2.09%" top="616" right="87.57%" height="27"/>
-        <Button id="Button22" taborder="31" text="addRow" left="13.48%" top="616" right="75.79%" height="27"/>
-        <Button id="Button23" taborder="32" text="getDeletedRowCount" left="25.26%" top="581" right="64.01%" height="27"/>
-        <Button id="Button24" taborder="33" text="getRowType" left="25.26%" top="616" right="64.01%" height="27"/>
-        <Button id="Button25" taborder="34" text="getOrgColumn" left="37.04%" top="581" right="52.09%" height="27" onclick="Button25_onclick"/>
-        <Button id="Button26" taborder="35" text="reset" left="36.78%" top="616" right="52.09%" height="28"/>
-        <Edit id="resultWin" taborder="36" left="1.57%" top="679" right="52.36%" height="54"/>
+        <Button id="Button07" taborder="16" text="getSum()" left="1.7%" top="368" right="82.07%" height="20" onclick="Button07_onclick"/>
+        <Button id="Button08" taborder="17" text="getCaseSum" left="18.85%" top="368" right="65.31%" height="20" onclick="Button08_onclick"/>
+        <Button id="Button09" taborder="18" text="rowposition" left="24.74%" top="515" right="64.53%" height="24" onclick="Button09_onclick"/>
+        <Button id="Button10" taborder="19" text="getRowCount" left="36.52%" top="515" right="52.88%" height="24" onclick="Button10_onclick"/>
+        <Button id="Button11" taborder="20" text="getColumn" left="24.87%" top="547" right="64.53%" height="24" onclick="Button11_onclick"/>
+        <Button id="Button12" taborder="21" text="setColumn" left="36.52%" top="547" right="52.88%" height="24" onclick="Button12_onclick"/>
+        <Button id="Button13" taborder="22" text="findRowExpr" left="35.6%" top="337" right="49.35%" height="25" onclick="Button13_onclick"/>
+        <Button id="Button14" taborder="23" text="findRow" left="35.73%" top="368" right="49.35%" height="20" onclick="Button14_onclick"/>
+        <Button id="Button15" taborder="24" text="appendDataset" left="24.74%" top="575" right="64.53%" height="24" onclick="Button15_onclick"/>
+        <Button id="Button16" taborder="25" text="clearData" left="36.39%" top="575" right="53.01%" height="24" onclick="Button16_onclick"/>
+        <Button id="Button17" taborder="26" text="deleteRow" left="13.09%" top="683" right="76.18%" height="27" onclick="Button17_onclick"/>
+        <Button id="Button18" taborder="27" text="applyChange" left="1.44%" top="714" right="87.96%" height="23" onclick="Button18_onclick"/>
+        <Button id="Button19" taborder="28" text="deleteAll" left="25%" top="607" right="64.66%" height="27" onclick="Button19_onclick"/>
+        <Button id="Button20" taborder="29" text="copyData" left="36.26%" top="606" right="53.01%" height="27" onclick="Button20_onclick"/>
+        <Button id="Button21" taborder="30" text="mergeData" left="25.13%" top="641" right="64.53%" height="27" onclick="Button21_onclick"/>
+        <Button id="Button22" taborder="31" text="addRow" left="1.57%" top="683" right="87.7%" height="27" onclick="Button22_onclick"/>
+        <Button id="Button23" taborder="32" text="getDeletedRowCount" left="13.09%" top="714" right="76.18%" height="27" onclick="Button23_onclick"/>
+        <Button id="Button24" taborder="33" text="getRowType" left="1.44%" top="744" right="87.83%" height="27" onclick="Button24_onclick"/>
+        <Button id="Button25" taborder="34" text="getOrgColumn" left="12.96%" top="745" right="76.18%" height="27" onclick="Button25_onclick"/>
+        <Button id="Button26" taborder="35" text="reset" left="36.26%" top="641" right="52.62%" height="28" onclick="Button26_onclick"/>
+        <Edit id="resultWin" taborder="36" left="24.87%" top="677" right="52.88%" height="97"/>
+        <TextArea id="resultWin2" taborder="37" left="1.31%" top="397" right="49.21%" height="48"/>
       </Layout>
     </Layouts>
     <Objects>
@@ -327,6 +328,7 @@
           </Row>
         </Rows>
       </Dataset>
+      <Dataset id="cDataset"/>
     </Objects>
     <Script type="xscript5.0"><![CDATA[
 this.Button00_onclick = function(obj:Button, e:nexacro.ClickEventInfo)
@@ -432,16 +434,16 @@ this.Button06_onclick = function(obj:Button, e:nexacro.ClickEventInfo)
 //getSum
 this.Button07_onclick = function(obj:Button, e:nexacro.ClickEventInfo)
 {
-	var sum = this.datasetTest2.getSum("col2 > '1' ? col2: '0'");
-	this.resultWin.set_value(sum);
+	var sum = this.datasetTest.getSum("col2 > '1' ? col2: '0'");
+	this.resultWin2.set_value(sum);
 	
 }
 
 //getCaseSum
 this.Button08_onclick = function(obj:Button, e:nexacro.ClickEventInfo)
 {
-	var caseSum = this.datasetTest2.getCaseSum("col2 > 1","col2") ;
-	this.resultWin.set_value(caseSum);
+	var caseSum = this.datasetTest.getCaseSum("col2 > 2","col2") ;
+	this.resultWin2.set_value(caseSum);
 }
 
 this.Button09_onclick = function(obj:Button, e:nexacro.ClickEventInfo)
@@ -476,6 +478,105 @@ this.Button13_onclick = function(obj:Button, e:nexacro.ClickEventInfo)
 	//조건에 맞는 첫번째 레코드 검색하기
 	var record = this.datasetTest.findRowExpr("col2 >5");
 	this.resultWin.set_value(record);
+}
+
+this.Button14_onclick = function(obj:Button, e:nexacro.ClickEventInfo)
+{
+	//find row
+	var result = this.datasetTest.findRow("col1",'4'); //row의 index를 알려 주는 구나
+	var resultT = this.datasetTest.getColumn(result,"col1");
+	this.resultWin2.set_value(resultT);
+}
+
+//Dataset 전체 제어
+this.Button15_onclick = function(obj:Button, e:nexacro.ClickEventInfo)
+{
+	//다른 dataset을 추가 하기 
+	this.datasetTest2.appendData(this.datasetTest);
+}
+
+
+this.Button16_onclick = function(obj:Button, e:nexacro.ClickEventInfo)
+{
+	//Dataset 전체 데이터 지우기
+	this.datasetTest2.clearData();
+}
+
+this.Button19_onclick = function(obj:Button, e:nexacro.ClickEventInfo)
+{
+	//Dataset 레코드 전체 삭제 하기 
+	this.datasetTest2.deleteAll();
+}
+
+this.Button20_onclick = function(obj:Button, e:nexacro.ClickEventInfo)
+{
+	//Deataset을 다른 Dataset으로 복사 하기 
+	this.cDataset.copyData(this.datasetTest2);
+	alert(this.cDataset.saveXML() );
+}
+
+
+this.Button21_onclick = function(obj:Button, e:nexacro.ClickEventInfo)
+{
+	//다른 Dataset을 현재 dataset 뒤에 덧붙이기
+	this.datasetTest2.mergeData(this.datasetTest);
+	
+}
+
+this.Button22_onclick = function(obj:Button, e:nexacro.ClickEventInfo)
+{
+	//레코드 추가 하기 
+	var addIndex = this.datasetTest2.addRow();
+	this.resultWin.set_value(addIndex);
+	this.datasetTest2.setColumn(addIndex,"col1","D");
+	this.datasetTest2.setColumn(addIndex,"col2",addIndex+1);
+	alert(this.datasetTest2.saveXML());
+}
+
+this.Button17_onclick = function(obj:Button, e:nexacro.ClickEventInfo)
+{
+ // 레코드 삭제 하기 
+	this.datasetTest2.deleteRow(this.datasetTest2.rowposition);
+}
+
+this.Button18_onclick = function(obj:Button, e:nexacro.ClickEventInfo)
+{
+	//레코드 변경 사항
+	var test = this.datasetTest2.applyChange();
+}
+
+this.Button23_onclick = function(obj:Button, e:nexacro.ClickEventInfo)
+{
+	//삭제된 레코드 갯수 구하기 
+	var deleteCnt = this.datasetTest2.getDeletedRowCount();
+	this.resultWin.set_value(deleteCnt);
+}
+
+this.Button24_onclick = function(obj:Button, e:nexacro.ClickEventInfo)
+{
+	//레코드 상태 정보 
+	this.datasetTest2.getRowType(this.datasetTest2.rowposition);
+	/**
+		레코드 상태 정보 
+		normal : 1, 
+		insert : 2,
+		update : 4,
+		delete : 8
+	*/
+	this.resultWin.set_value(this.datasetTest2.getRowType(this.datasetTest2.rowposition));
+}
+
+this.Button25_onclick = function(obj:Button, e:nexacro.ClickEventInfo)
+{
+	//변경된 컬럼 인덱스 구하기 
+	var test = this.datasetTest2.getOrgColumn(this.datasetTest2.rowposition, "col2");
+	this.resultWin.set_value(test);
+}
+
+this.Button26_onclick = function(obj:Button, e:nexacro.ClickEventInfo)
+{
+	//Dataset을 마지막 저장 상태로 되돌리기 , sql rollback에 해당 한다. 
+	this.datasetTest2.reset();
 }
 ]]></Script>
   </Form>

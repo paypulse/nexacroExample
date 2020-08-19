@@ -51,6 +51,10 @@
             obj._setContents("<ColumnInfo><Column id=\"col1\" type=\"STRING\" size=\"256\"/><Column id=\"col2\" type=\"STRING\" size=\"256\"/></ColumnInfo><Rows><Row><Col id=\"col1\">A</Col><Col id=\"col2\">1</Col></Row><Row><Col id=\"col1\">A</Col><Col id=\"col2\">2</Col></Row><Row><Col id=\"col1\">A</Col><Col id=\"col2\">3</Col></Row><Row><Col id=\"col1\">B</Col><Col id=\"col2\">4</Col></Row><Row><Col id=\"col1\">B</Col><Col id=\"col2\">5</Col></Row><Row><Col id=\"col1\">C</Col><Col id=\"col2\">6</Col></Row><Row><Col id=\"col1\">C</Col><Col id=\"col2\">7</Col></Row></Rows>");
             this.addChild(obj.name, obj);
 
+            obj = new Dataset("cDataset", this);
+            obj._setContents("");
+            this.addChild(obj.name, obj);
+
 
             
             // UI Components Initialize
@@ -146,120 +150,124 @@
             obj.set_text("getColumn(0,col1)");
             this.addChild(obj.name, obj);
 
-            obj = new Button("Button06", "absolute", "25.13%", "376", null, "23", "52.62%", null, this);
+            obj = new Button("Button06", "absolute", "24.87%", "484", null, "23", "52.88%", null, this);
             obj.set_taborder("14");
             obj.set_text("filter를 이용한 distinct 처리");
             obj.style.set_font("9 Dotum");
             this.addChild(obj.name, obj);
 
-            obj = new Grid("Grid01", "absolute", "1.96%", "378", null, "198", "75.92%", null, this);
+            obj = new Grid("Grid01", "absolute", "1.83%", "481", null, "198", "76.05%", null, this);
             obj.set_taborder("15");
             obj.set_binddataset("datasetTest2");
             obj._setContents("<Formats><Format id=\"default\"><Columns><Column size=\"80\"/><Column size=\"80\"/></Columns><Rows><Row size=\"24\" band=\"head\"/><Row size=\"24\"/></Rows><Band id=\"head\"><Cell text=\"col1\"/><Cell col=\"1\" text=\"col2\"/></Band><Band id=\"body\"><Cell text=\"bind:col1\"/><Cell col=\"1\" text=\"bind:col2\"/></Band></Format></Formats>");
             this.addChild(obj.name, obj);
 
-            obj = new Button("Button07", "absolute", "25.13%", "403", null, "24", "64.14%", null, this);
+            obj = new Button("Button07", "absolute", "1.7%", "368", null, "20", "82.07%", null, this);
             obj.set_taborder("16");
             obj.set_text("getSum()");
             this.addChild(obj.name, obj);
 
-            obj = new Button("Button08", "absolute", "36.78%", "403", null, "24", "52.49%", null, this);
+            obj = new Button("Button08", "absolute", "18.85%", "368", null, "20", "65.31%", null, this);
             obj.set_taborder("17");
             obj.set_text("getCaseSum");
             this.addChild(obj.name, obj);
 
-            obj = new Button("Button09", "absolute", "25%", "435", null, "24", "64.27%", null, this);
+            obj = new Button("Button09", "absolute", "24.74%", "515", null, "24", "64.53%", null, this);
             obj.set_taborder("18");
             obj.set_text("rowposition");
             this.addChild(obj.name, obj);
 
-            obj = new Button("Button10", "absolute", "36.78%", "435", null, "24", "52.62%", null, this);
+            obj = new Button("Button10", "absolute", "36.52%", "515", null, "24", "52.88%", null, this);
             obj.set_taborder("19");
             obj.set_text("getRowCount");
             this.addChild(obj.name, obj);
 
-            obj = new Button("Button11", "absolute", "25.13%", "467", null, "24", "64.27%", null, this);
+            obj = new Button("Button11", "absolute", "24.87%", "547", null, "24", "64.53%", null, this);
             obj.set_taborder("20");
             obj.set_text("getColumn");
             this.addChild(obj.name, obj);
 
-            obj = new Button("Button12", "absolute", "36.78%", "467", null, "24", "52.62%", null, this);
+            obj = new Button("Button12", "absolute", "36.52%", "547", null, "24", "52.88%", null, this);
             obj.set_taborder("21");
             obj.set_text("setColumn");
             this.addChild(obj.name, obj);
 
-            obj = new Button("Button13", "absolute", "25.13%", "499", null, "24", "64.14%", null, this);
+            obj = new Button("Button13", "absolute", "35.6%", "337", null, "25", "49.35%", null, this);
             obj.set_taborder("22");
             obj.set_text("findRowExpr");
             this.addChild(obj.name, obj);
 
-            obj = new Button("Button14", "absolute", "36.78%", "499", null, "24", "52.62%", null, this);
+            obj = new Button("Button14", "absolute", "35.73%", "368", null, "20", "49.35%", null, this);
             obj.set_taborder("23");
             obj.set_text("findRow");
             this.addChild(obj.name, obj);
 
-            obj = new Button("Button15", "absolute", "25.13%", "527", null, "24", "64.14%", null, this);
+            obj = new Button("Button15", "absolute", "24.74%", "575", null, "24", "64.53%", null, this);
             obj.set_taborder("24");
             obj.set_text("appendDataset");
             this.addChild(obj.name, obj);
 
-            obj = new Button("Button16", "absolute", "36.78%", "527", null, "24", "52.62%", null, this);
+            obj = new Button("Button16", "absolute", "36.39%", "575", null, "24", "53.01%", null, this);
             obj.set_taborder("25");
             obj.set_text("clearData");
             this.addChild(obj.name, obj);
 
-            obj = new Button("Button17", "absolute", "1.96%", "649", null, "23", "87.3%", null, this);
+            obj = new Button("Button17", "absolute", "13.09%", "683", null, "27", "76.18%", null, this);
             obj.set_taborder("26");
             obj.set_text("deleteRow");
             this.addChild(obj.name, obj);
 
-            obj = new Button("Button18", "absolute", "13.48%", "648", null, "23", "75.92%", null, this);
+            obj = new Button("Button18", "absolute", "1.44%", "714", null, "23", "87.96%", null, this);
             obj.set_taborder("27");
             obj.set_text("applyChange");
             this.addChild(obj.name, obj);
 
-            obj = new Button("Button19", "absolute", "2.09%", "581", null, "27", "87.57%", null, this);
+            obj = new Button("Button19", "absolute", "25%", "607", null, "27", "64.66%", null, this);
             obj.set_taborder("28");
             obj.set_text("deleteAll");
             this.addChild(obj.name, obj);
 
-            obj = new Button("Button20", "absolute", "13.48%", "581", null, "27", "75.79%", null, this);
+            obj = new Button("Button20", "absolute", "36.26%", "606", null, "27", "53.01%", null, this);
             obj.set_taborder("29");
             obj.set_text("copyData");
             this.addChild(obj.name, obj);
 
-            obj = new Button("Button21", "absolute", "2.09%", "616", null, "27", "87.57%", null, this);
+            obj = new Button("Button21", "absolute", "25.13%", "641", null, "27", "64.53%", null, this);
             obj.set_taborder("30");
             obj.set_text("mergeData");
             this.addChild(obj.name, obj);
 
-            obj = new Button("Button22", "absolute", "13.48%", "616", null, "27", "75.79%", null, this);
+            obj = new Button("Button22", "absolute", "1.57%", "683", null, "27", "87.7%", null, this);
             obj.set_taborder("31");
             obj.set_text("addRow");
             this.addChild(obj.name, obj);
 
-            obj = new Button("Button23", "absolute", "25.26%", "581", null, "27", "64.01%", null, this);
+            obj = new Button("Button23", "absolute", "13.09%", "714", null, "27", "76.18%", null, this);
             obj.set_taborder("32");
             obj.set_text("getDeletedRowCount");
             this.addChild(obj.name, obj);
 
-            obj = new Button("Button24", "absolute", "25.26%", "616", null, "27", "64.01%", null, this);
+            obj = new Button("Button24", "absolute", "1.44%", "744", null, "27", "87.83%", null, this);
             obj.set_taborder("33");
             obj.set_text("getRowType");
             this.addChild(obj.name, obj);
 
-            obj = new Button("Button25", "absolute", "37.04%", "581", null, "27", "52.09%", null, this);
+            obj = new Button("Button25", "absolute", "12.96%", "745", null, "27", "76.18%", null, this);
             obj.set_taborder("34");
             obj.set_text("getOrgColumn");
             this.addChild(obj.name, obj);
 
-            obj = new Button("Button26", "absolute", "36.78%", "616", null, "28", "52.09%", null, this);
+            obj = new Button("Button26", "absolute", "36.26%", "641", null, "28", "52.62%", null, this);
             obj.set_taborder("35");
             obj.set_text("reset");
             this.addChild(obj.name, obj);
 
-            obj = new Edit("resultWin", "absolute", "1.57%", "679", null, "54", "52.36%", null, this);
+            obj = new Edit("resultWin", "absolute", "24.87%", "677", null, "97", "52.88%", null, this);
             obj.set_taborder("36");
+            this.addChild(obj.name, obj);
+
+            obj = new TextArea("resultWin2", "absolute", "1.31%", "397", null, "48", "49.21%", null, this);
+            obj.set_taborder("37");
             this.addChild(obj.name, obj);
 
 
@@ -392,16 +400,16 @@
         //getSum
         this.Button07_onclick = function(obj,e)
         {
-        	var sum = this.datasetTest2.getSum("col2 > '1' ? col2: '0'");
-        	this.resultWin.set_value(sum);
+        	var sum = this.datasetTest.getSum("col2 > '1' ? col2: '0'");
+        	this.resultWin2.set_value(sum);
         	
         }
 
         //getCaseSum
         this.Button08_onclick = function(obj,e)
         {
-        	var caseSum = this.datasetTest2.getCaseSum("col2 > 1","col2") ;
-        	this.resultWin.set_value(caseSum);
+        	var caseSum = this.datasetTest.getCaseSum("col2 > 2","col2") ;
+        	this.resultWin2.set_value(caseSum);
         }
 
         this.Button09_onclick = function(obj,e)
@@ -437,6 +445,105 @@
         	var record = this.datasetTest.findRowExpr("col2 >5");
         	this.resultWin.set_value(record);
         }
+
+        this.Button14_onclick = function(obj,e)
+        {
+        	//find row
+        	var result = this.datasetTest.findRow("col1",'4'); //row의 index를 알려 주는 구나
+        	var resultT = this.datasetTest.getColumn(result,"col1");
+        	this.resultWin2.set_value(resultT);
+        }
+
+        //Dataset 전체 제어
+        this.Button15_onclick = function(obj,e)
+        {
+        	//다른 dataset을 추가 하기 
+        	this.datasetTest2.appendData(this.datasetTest);
+        }
+
+        
+        this.Button16_onclick = function(obj,e)
+        {
+        	//Dataset 전체 데이터 지우기
+        	this.datasetTest2.clearData();
+        }
+
+        this.Button19_onclick = function(obj,e)
+        {
+        	//Dataset 레코드 전체 삭제 하기 
+        	this.datasetTest2.deleteAll();
+        }
+
+        this.Button20_onclick = function(obj,e)
+        {
+        	//Deataset을 다른 Dataset으로 복사 하기 
+        	this.cDataset.copyData(this.datasetTest2);
+        	alert(this.cDataset.saveXML() );
+        }
+
+        
+        this.Button21_onclick = function(obj,e)
+        {
+        	//다른 Dataset을 현재 dataset 뒤에 덧붙이기
+        	this.datasetTest2.mergeData(this.datasetTest);
+        	
+        }
+
+        this.Button22_onclick = function(obj,e)
+        {
+        	//레코드 추가 하기 
+        	var addIndex = this.datasetTest2.addRow();
+        	this.resultWin.set_value(addIndex);
+        	this.datasetTest2.setColumn(addIndex,"col1","D");
+        	this.datasetTest2.setColumn(addIndex,"col2",addIndex+1);
+        	alert(this.datasetTest2.saveXML());
+        }
+
+        this.Button17_onclick = function(obj,e)
+        {
+         // 레코드 삭제 하기 
+        	this.datasetTest2.deleteRow(this.datasetTest2.rowposition);
+        }
+
+        this.Button18_onclick = function(obj,e)
+        {
+        	//레코드 변경 사항
+        	var test = this.datasetTest2.applyChange();
+        }
+
+        this.Button23_onclick = function(obj,e)
+        {
+        	//삭제된 레코드 갯수 구하기 
+        	var deleteCnt = this.datasetTest2.getDeletedRowCount();
+        	this.resultWin.set_value(deleteCnt);
+        }
+
+        this.Button24_onclick = function(obj,e)
+        {
+        	//레코드 상태 정보 
+        	this.datasetTest2.getRowType(this.datasetTest2.rowposition);
+        	/**
+        		레코드 상태 정보 
+        		normal : 1, 
+        		insert : 2,
+        		update : 4,
+        		delete : 8
+        	*/
+        	this.resultWin.set_value(this.datasetTest2.getRowType(this.datasetTest2.rowposition));
+        }
+
+        this.Button25_onclick = function(obj,e)
+        {
+        	//변경된 컬럼 인덱스 구하기 
+        	var test = this.datasetTest2.getOrgColumn(this.datasetTest2.rowposition, "col2");
+        	this.resultWin.set_value(test);
+        }
+
+        this.Button26_onclick = function(obj,e)
+        {
+        	//Dataset을 마지막 저장 상태로 되돌리기 , sql rollback에 해당 한다. 
+        	this.datasetTest2.reset();
+        }
         
         });
 
@@ -463,7 +570,19 @@
             this.Button11.addEventHandler("onclick", this.Button11_onclick, this);
             this.Button12.addEventHandler("onclick", this.Button12_onclick, this);
             this.Button13.addEventHandler("onclick", this.Button13_onclick, this);
+            this.Button14.addEventHandler("onclick", this.Button14_onclick, this);
+            this.Button15.addEventHandler("onclick", this.Button15_onclick, this);
+            this.Button16.addEventHandler("onclick", this.Button16_onclick, this);
+            this.Button17.addEventHandler("onclick", this.Button17_onclick, this);
+            this.Button18.addEventHandler("onclick", this.Button18_onclick, this);
+            this.Button19.addEventHandler("onclick", this.Button19_onclick, this);
+            this.Button20.addEventHandler("onclick", this.Button20_onclick, this);
+            this.Button21.addEventHandler("onclick", this.Button21_onclick, this);
+            this.Button22.addEventHandler("onclick", this.Button22_onclick, this);
+            this.Button23.addEventHandler("onclick", this.Button23_onclick, this);
+            this.Button24.addEventHandler("onclick", this.Button24_onclick, this);
             this.Button25.addEventHandler("onclick", this.Button25_onclick, this);
+            this.Button26.addEventHandler("onclick", this.Button26_onclick, this);
 
         };
 
