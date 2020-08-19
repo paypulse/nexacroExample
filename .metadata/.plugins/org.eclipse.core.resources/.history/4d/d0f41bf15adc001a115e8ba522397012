@@ -1,8 +1,0 @@
-package nexacroSample.service.impl;
-
-import java.util.List;
-import java.util.Map;
-
-public interface SampleMapper {
-
-}

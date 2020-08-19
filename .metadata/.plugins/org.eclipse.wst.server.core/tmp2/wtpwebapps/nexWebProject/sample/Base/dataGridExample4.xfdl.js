@@ -267,11 +267,16 @@
 
         
         this.Grid00_oncellclick = function(obj,e)
-        {
-        	trace(rowIndex);
+        {	
         	rowIndex = e.row;
-        	trace(rowIndex);
         	
+        	if(this.Grid00.getCellProperty("body",e.cell,"displaytype") == "button"){
+        		
+        	}else{
+        		
+        	
+        	}
+
         }
         
         });

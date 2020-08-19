@@ -349,11 +349,16 @@ this.dataGridExample4_onload = function(obj:Form, e:nexacro.LoadEventInfo)
 
 
 this.Grid00_oncellclick = function(obj:Grid, e:nexacro.GridClickEventInfo)
-{
-	trace(rowIndex);
+{	
 	rowIndex = e.row;
-	trace(rowIndex);
 	
+	if(this.Grid00.getCellProperty("body",e.cell,"displaytype") == "button"){
+		
+	}else{
+		
+	
+	}
+
 }
 ]]></Script>
   </Form>

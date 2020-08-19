@@ -258,6 +258,10 @@
             obj.set_text("reset");
             this.addChild(obj.name, obj);
 
+            obj = new Edit("resultWin", "absolute", "1.57%", "679", null, "54", "52.36%", null, this);
+            obj.set_taborder("36");
+            this.addChild(obj.name, obj);
+
 
             
             // Layout Functions
@@ -388,22 +392,50 @@
         //getSum
         this.Button07_onclick = function(obj,e)
         {
-        	var sum = this.datasetTest2.getSum("col1 > '1' ? col1: '0'");
-        	trace("sum : ",sum);
+        	var sum = this.datasetTest2.getSum("col2 > '1' ? col2: '0'");
+        	this.resultWin.set_value(sum);
         	
         }
 
         //getCaseSum
         this.Button08_onclick = function(obj,e)
         {
-        	var caseSum = this.datasetTest2.getCaseSum("col1 > 1","col1") ;
-        	trace("case sum :", caseSum);
+        	var caseSum = this.datasetTest2.getCaseSum("col2 > 1","col2") ;
+        	this.resultWin.set_value(caseSum);
         }
 
         this.Button09_onclick = function(obj,e)
         {
         	var position = this.datasetTest2.rowposition;
-        	trace("row position :" , position);
+        	this.resultWin.set_value(position);
+        }
+
+        this.Button10_onclick = function(obj,e)
+        {	//dataset 갯수 구하기
+        	var rowCount = this.datasetTest2.getRowCount();
+        	this.resultWin.set_value(rowCount);
+        }
+
+        this.Button11_onclick = function(obj,e)
+        {
+        	//dataset에서 해당하는 컬럼값 구하기 
+        	var column  = this.datasetTest2.getColumn(this.datasetTest2.rowposition, "col1");
+        	this.resultWin.set_value(column);
+        }
+
+        this.Button12_onclick = function(obj,e)
+        {
+        	//dataset에서 해당하는 컬럼값 설정 
+        	this.datasetTest2.setColumn(this.datasetTest2.rowposition,"col2",'A');
+        }
+
+        
+
+        this.Button13_onclick = function(obj,e)
+        {
+        	//조건에 맞는 첫번째 레코드 검색하기
+        	var record = this.datasetTest.findRowExpr("col2 >5");
+        	this.resultWin.set_value(record);
         }
         
         });
@@ -427,7 +459,10 @@
             this.Button07.addEventHandler("onclick", this.Button07_onclick, this);
             this.Button08.addEventHandler("onclick", this.Button08_onclick, this);
             this.Button09.addEventHandler("onclick", this.Button09_onclick, this);
+            this.Button10.addEventHandler("onclick", this.Button10_onclick, this);
+            this.Button11.addEventHandler("onclick", this.Button11_onclick, this);
             this.Button12.addEventHandler("onclick", this.Button12_onclick, this);
+            this.Button13.addEventHandler("onclick", this.Button13_onclick, this);
             this.Button25.addEventHandler("onclick", this.Button25_onclick, this);
 
         };

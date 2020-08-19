@@ -1,7 +1,0 @@
-package nexacroSample.service;
-
-public interface SampleService {
-	//데이터 조회
-	List<Map<String, Object>> selectSampleList(Map<String,String> searchInfo);
-
-}

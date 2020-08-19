@@ -71,10 +71,10 @@
         <Button id="Button07" taborder="16" text="getSum()" left="25.13%" top="403" right="64.14%" height="24" onclick="Button07_onclick"/>
         <Button id="Button08" taborder="17" text="getCaseSum" left="36.78%" top="403" right="52.49%" height="24" onclick="Button08_onclick"/>
         <Button id="Button09" taborder="18" text="rowposition" left="25%" top="435" right="64.27%" height="24" onclick="Button09_onclick"/>
-        <Button id="Button10" taborder="19" text="getRowCount" left="36.78%" top="435" right="52.62%" height="24"/>
-        <Button id="Button11" taborder="20" text="getColumn" left="25.13%" top="467" right="64.27%" height="24"/>
+        <Button id="Button10" taborder="19" text="getRowCount" left="36.78%" top="435" right="52.62%" height="24" onclick="Button10_onclick"/>
+        <Button id="Button11" taborder="20" text="getColumn" left="25.13%" top="467" right="64.27%" height="24" onclick="Button11_onclick"/>
         <Button id="Button12" taborder="21" text="setColumn" left="36.78%" top="467" right="52.62%" height="24" onclick="Button12_onclick"/>
-        <Button id="Button13" taborder="22" text="findRowExpr" left="25.13%" top="499" right="64.14%" height="24"/>
+        <Button id="Button13" taborder="22" text="findRowExpr" left="25.13%" top="499" right="64.14%" height="24" onclick="Button13_onclick"/>
         <Button id="Button14" taborder="23" text="findRow" left="36.78%" top="499" right="52.62%" height="24"/>
         <Button id="Button15" taborder="24" text="appendDataset" left="25.13%" top="527" right="64.14%" height="24"/>
         <Button id="Button16" taborder="25" text="clearData" left="36.78%" top="527" right="52.62%" height="24"/>
@@ -88,6 +88,7 @@
         <Button id="Button24" taborder="33" text="getRowType" left="25.26%" top="616" right="64.01%" height="27"/>
         <Button id="Button25" taborder="34" text="getOrgColumn" left="37.04%" top="581" right="52.09%" height="27" onclick="Button25_onclick"/>
         <Button id="Button26" taborder="35" text="reset" left="36.78%" top="616" right="52.09%" height="28"/>
+        <Edit id="resultWin" taborder="36" left="1.57%" top="679" right="52.36%" height="54"/>
       </Layout>
     </Layouts>
     <Objects>
@@ -431,22 +432,50 @@ this.Button06_onclick = function(obj:Button, e:nexacro.ClickEventInfo)
 //getSum
 this.Button07_onclick = function(obj:Button, e:nexacro.ClickEventInfo)
 {
-	var sum = this.datasetTest2.getSum("col1 > '1' ? col1: '0'");
-	trace("sum : ",sum);
+	var sum = this.datasetTest2.getSum("col2 > '1' ? col2: '0'");
+	this.resultWin.set_value(sum);
 	
 }
 
 //getCaseSum
 this.Button08_onclick = function(obj:Button, e:nexacro.ClickEventInfo)
 {
-	var caseSum = this.datasetTest2.getCaseSum("col1 > 1","col1") ;
-	trace("case sum :", caseSum);
+	var caseSum = this.datasetTest2.getCaseSum("col2 > 1","col2") ;
+	this.resultWin.set_value(caseSum);
 }
 
 this.Button09_onclick = function(obj:Button, e:nexacro.ClickEventInfo)
 {
 	var position = this.datasetTest2.rowposition;
-	trace("row position :" , position);
+	this.resultWin.set_value(position);
+}
+
+this.Button10_onclick = function(obj:Button, e:nexacro.ClickEventInfo)
+{	//dataset 갯수 구하기
+	var rowCount = this.datasetTest2.getRowCount();
+	this.resultWin.set_value(rowCount);
+}
+
+this.Button11_onclick = function(obj:Button, e:nexacro.ClickEventInfo)
+{
+	//dataset에서 해당하는 컬럼값 구하기 
+	var column  = this.datasetTest2.getColumn(this.datasetTest2.rowposition, "col1");
+	this.resultWin.set_value(column);
+}
+
+this.Button12_onclick = function(obj:Button, e:nexacro.ClickEventInfo)
+{
+	//dataset에서 해당하는 컬럼값 설정 
+	this.datasetTest2.setColumn(this.datasetTest2.rowposition,"col2",'A');
+}
+
+
+
+this.Button13_onclick = function(obj:Button, e:nexacro.ClickEventInfo)
+{
+	//조건에 맞는 첫번째 레코드 검색하기
+	var record = this.datasetTest.findRowExpr("col2 >5");
+	this.resultWin.set_value(record);
 }
 ]]></Script>
   </Form>
