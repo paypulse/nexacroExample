@@ -30,6 +30,21 @@
             obj.set_text("←Back");
             this.addChild(obj.name, obj);
 
+            obj = new Button("Button01", "absolute", "22", "49", "204", "42", null, null, this);
+            obj.set_taborder("1");
+            obj.set_text("chromDebuggingTest");
+            this.addChild(obj.name, obj);
+
+            obj = new Button("Button02", "absolute", "22", "107", "204", "42", null, null, this);
+            obj.set_taborder("2");
+            obj.set_text("error 위치 확인");
+            this.addChild(obj.name, obj);
+
+            obj = new Button("Button03", "absolute", "22", "166", "204", "42", null, null, this);
+            obj.set_taborder("3");
+            obj.set_text("라인 디버그");
+            this.addChild(obj.name, obj);
+
 
             
             // Layout Functions
@@ -61,6 +76,40 @@
         {
         	this.go("Base::HelloScreen.xfdl");
         }
+
+        this.Button01_onclick = function(obj,e)
+        {
+        	var sTest2 = "Test trace!";
+        	trace("this is not application trace");
+        	application.trace(sTest2);
+        }
+
+        //오류가 있는 위치확인을 위해서 console탭확인
+        this.Button02_onclick = function(obj,e)
+        {
+        	trace(Button02.text);
+        }
+
+        this.Button03_onclick = function(obj,e)
+        {
+        	var iTest =0;
+        	
+        	iTest = iTest +1;
+        	iTest = iTest +1;
+        	iTest = iTest +1;
+        	
+        	var iRtn = this.fn_debug(iTest);
+        	iTest = iRtn +1;
+        	iTest = iTest+1;
+        	
+        	trace(iTest);
+        }
+
+        this.fn_debug = function(i)
+        {
+        	i = i*10;
+        	return i;
+        }
         
         });
 
@@ -70,6 +119,9 @@
         this.on_initEvent = function()
         {
             this.Button00.addEventHandler("onclick", this.Button00_onclick, this);
+            this.Button01.addEventHandler("onclick", this.Button01_onclick, this);
+            this.Button02.addEventHandler("onclick", this.Button02_onclick, this);
+            this.Button03.addEventHandler("onclick", this.Button03_onclick, this);
 
         };
 

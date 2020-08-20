@@ -5,6 +5,9 @@
     <Layouts>
       <Layout>
         <Button id="Button00" taborder="0" text="←Back" left="576" top="22" width="166" height="34" onclick="Button00_onclick"/>
+        <Button id="Button01" taborder="1" text="chromDebuggingTest" left="22" top="49" width="204" height="42" onclick="Button01_onclick"/>
+        <Button id="Button02" taborder="2" text="error 위치 확인" left="22" top="107" width="204" height="42" onclick="Button02_onclick"/>
+        <Button id="Button03" taborder="3" text="라인 디버그" left="22" top="166" width="204" height="42" onclick="Button03_onclick"/>
       </Layout>
     </Layouts>
     <Objects>
@@ -77,6 +80,40 @@
 this.Button00_onclick = function(obj:Button, e:nexacro.ClickEventInfo)
 {
 	this.go("Base::HelloScreen.xfdl");
+}
+
+this.Button01_onclick = function(obj:Button, e:nexacro.ClickEventInfo)
+{
+	var sTest2 = "Test trace!";
+	trace("this is not application trace");
+	application.trace(sTest2);
+}
+
+//오류가 있는 위치확인을 위해서 console탭확인
+this.Button02_onclick = function(obj:Button, e:nexacro.ClickEventInfo)
+{
+	trace(Button02.text);
+}
+
+this.Button03_onclick = function(obj:Button, e:nexacro.ClickEventInfo)
+{
+	var iTest =0;
+	
+	iTest = iTest +1;
+	iTest = iTest +1;
+	iTest = iTest +1;
+	
+	var iRtn = this.fn_debug(iTest);
+	iTest = iRtn +1;
+	iTest = iTest+1;
+	
+	trace(iTest);
+}
+
+this.fn_debug = function(i)
+{
+	i = i*10;
+	return i;
 }
 ]]></Script>
   </Form>

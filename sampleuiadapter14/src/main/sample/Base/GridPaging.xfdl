@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="GridPaging" left="0" top="0" width="764" height="640" titletext="Base::gridPaging">
+    <Layouts>
+      <Layout>
+        <Button id="Button00" taborder="0" text="←Back" left="608" top="11" width="144" height="42" onclick="Button00_onclick"/>
+        <Grid id="Grid00" taborder="1" left="32" top="152" width="707" height="331">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="156"/>
+                <Column size="122"/>
+                <Column size="186"/>
+                <Column size="144"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell displaytype="normal" edittype="text" style="background:lightblue;background2:lightblue;color:darkblue;color2:cornflowerblue;accessibility:button enable all '' '' '' ;" text="no"/>
+                <Cell col="1" displaytype="normal" edittype="text" style="background:lightblue;color:darkblue;color2:darkblue;" text="booktitle"/>
+                <Cell col="2" displaytype="normal" edittype="text" style="background:lightblue;color:darkblue;color2:darkblue;" text="publisher"/>
+                <Cell col="3" displaytype="normal" edittype="text" style="background:lightblue;color:darkblue;color2:darkblue;" text="author"/>
+                <Cell col="4" displaytype="normal" edittype="text" style="background:lightblue;color:darkblue;color2:darkblue;" text="price"/>
+              </Band>
+              <Band id="body">
+                <Cell celltype="head" displaytype="normal" edittype="none" style="background:lightblue;background2:lightblue;color:darkblue;color2:darkblue;" text="bind:no" expr="expr:currow+1"/>
+                <Cell col="1" text="bind:booktitle"/>
+                <Cell col="2" text="bind:publisher"/>
+                <Cell col="3" text="bind:author"/>
+                <Cell col="4" text="bind:price"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Button id="Button01" taborder="2" text="조회" left="629" top="120" width="107" height="28" onclick="Button01_onclick"/>
+        <Div id="paging" taborder="3" text="this is paging" left="34" top="485" width="705" height="61"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="gridPaging">
+        <ColumnInfo>
+          <Column id="no" type="STRING" size="256"/>
+          <Column id="booktitle" type="STRING" size="256"/>
+          <Column id="publisher" type="STRING" size="256"/>
+          <Column id="author" type="STRING" size="256"/>
+          <Column id="price" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="booktitle">test1</Col>
+            <Col id="publisher">test1 publisher</Col>
+            <Col id="author">1</Col>
+            <Col id="price">1000</Col>
+          </Row>
+          <Row>
+            <Col id="booktitle">test2</Col>
+            <Col id="publisher">test2 publisher</Col>
+            <Col id="author">1</Col>
+            <Col id="price">1001</Col>
+          </Row>
+          <Row>
+            <Col id="booktitle">test3</Col>
+            <Col id="publisher">test3 publisher</Col>
+            <Col id="author">2</Col>
+            <Col id="price">1002</Col>
+          </Row>
+          <Row>
+            <Col id="booktitle">test4</Col>
+            <Col id="publisher">test4 publisher</Col>
+            <Col id="author">2</Col>
+            <Col id="price">1003</Col>
+            <Col id="no">[Undefined]</Col>
+          </Row>
+          <Row>
+            <Col id="booktitle">test5</Col>
+            <Col id="publisher">test5 publisher</Col>
+            <Col id="author">3</Col>
+            <Col id="price">1004</Col>
+          </Row>
+          <Row>
+            <Col id="booktitle">test6</Col>
+            <Col id="publisher">test6 publisher</Col>
+            <Col id="author">4</Col>
+            <Col id="price">1005</Col>
+          </Row>
+          <Row>
+            <Col id="booktitle">test7</Col>
+            <Col id="publisher">test7 publisher</Col>
+            <Col id="author">5</Col>
+            <Col id="price">1006</Col>
+          </Row>
+          <Row>
+            <Col id="booktitle">test8</Col>
+            <Col id="publisher">test8 publisher</Col>
+            <Col id="author">6</Col>
+            <Col id="price">1007</Col>
+          </Row>
+          <Row>
+            <Col id="booktitle">test9</Col>
+            <Col id="publisher">test9 publisher</Col>
+            <Col id="author">7</Col>
+            <Col id="price">1008</Col>
+          </Row>
+          <Row>
+            <Col id="booktitle">test10</Col>
+            <Col id="publisher">test10 publisher</Col>
+            <Col id="author">8</Col>
+            <Col id="price">1009</Col>
+          </Row>
+          <Row>
+            <Col id="booktitle">test11</Col>
+            <Col id="publisher">test11 publisher</Col>
+            <Col id="author">9</Col>
+            <Col id="price">1010</Col>
+          </Row>
+          <Row>
+            <Col id="booktitle">test12</Col>
+            <Col id="publisher">test12 publisher</Col>
+            <Col id="author">9</Col>
+            <Col id="price">1011</Col>
+          </Row>
+          <Row>
+            <Col id="booktitle">test13</Col>
+            <Col id="publisher">test13 publisher</Col>
+            <Col id="author">3</Col>
+            <Col id="price">1012</Col>
+          </Row>
+          <Row>
+            <Col id="booktitle">test14</Col>
+            <Col id="publisher">test14 publisher</Col>
+            <Col id="author">4</Col>
+            <Col id="price">1013</Col>
+          </Row>
+          <Row>
+            <Col id="booktitle">test15</Col>
+            <Col id="publisher">test15 publisher</Col>
+            <Col id="author">3</Col>
+            <Col id="price">1014</Col>
+          </Row>
+          <Row>
+            <Col id="booktitle">test16</Col>
+            <Col id="publisher">test16 publisher</Col>
+            <Col id="author">3</Col>
+            <Col id="price">1015</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.0"><![CDATA[
+this.Button00_onclick = function(obj:Button, e:nexacro.ClickEventInfo)
+{
+	this.go("Base::HelloScreen.xfdl");
+}
+
+
+//전체 페이지 순서
+this.fv_iStartPageNo = 0;
+//한번 server 호출시 가져올 row 갯수
+this.fv_iUnitSelRowNo= 100;
+//server 호출시 시작할 row no
+this.fv_iStartSelRowNo= 1;
+//화면에 보여줄 최대 page번호 갯수
+this.fv_iMaxPageNum =10;
+//서버에서 넘어온 row 갯수(100건이 안될 수 있다.)
+this.fv_iServerRowCount = 0;
+
+
+this.Button01_onclick = function(obj:Button, e:nexacro.ClickEventInfo)
+{
+	this.Grid00.set_binddataset("gridPaging");
+	/*이곳에 transaction이 원래 있어야 함*/
+	
+}
+]]></Script>
+  </Form>
+</FDL>

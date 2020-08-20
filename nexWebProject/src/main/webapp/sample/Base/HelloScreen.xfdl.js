@@ -170,7 +170,7 @@
 
             obj = new Button("Button06", "absolute", "55.05%", "912", null, "31", "29.78%", null, this);
             obj.set_taborder("22");
-            obj.set_text("menuPopup");
+            obj.set_text("DebuggingTest");
             this.addChild(obj.name, obj);
 
             obj = new Button("Button07", "absolute", "72.26%", "912", null, "31", "12.58%", null, this);
@@ -181,6 +181,11 @@
             obj = new Button("Button08", "absolute", "2.04%", "960", null, "31", "82.8%", null, this);
             obj.set_taborder("24");
             obj.set_text("etcExample1");
+            this.addChild(obj.name, obj);
+
+            obj = new Button("Button09", "absolute", "20.11%", "960", null, "31", "64.73%", null, this);
+            obj.set_taborder("25");
+            obj.set_text("Grid paging");
             this.addChild(obj.name, obj);
 
 
@@ -286,6 +291,16 @@
         {
         	this.go("Base::etcExample1.xfdl");
         }
+
+        this.base_hello_onload = function(obj,e)
+        {
+        	trace("HelloScreen is first view Test");
+        }
+
+        this.Button09_onclick = function(obj,e)
+        {
+        	this.go("Base::GridPaging.xfdl");
+        }
         
         });
 
@@ -294,6 +309,7 @@
         // Regist UI Components Event
         this.on_initEvent = function()
         {
+            this.addEventHandler("onload", this.base_hello_onload, this);
             this.btn_hello.addEventHandler("onclick", this.btn_hello_onclick, this);
             this.secodeScreen.addEventHandler("onclick", this.secodeScreen_onclick, this);
             this.Static03.addEventHandler("onclick", this.Static03_onclick, this);
@@ -308,6 +324,7 @@
             this.Button06.addEventHandler("onclick", this.Button06_onclick, this);
             this.Button07.addEventHandler("onclick", this.Button07_onclick, this);
             this.Button08.addEventHandler("onclick", this.Button08_onclick, this);
+            this.Button09.addEventHandler("onclick", this.Button09_onclick, this);
 
         };
 

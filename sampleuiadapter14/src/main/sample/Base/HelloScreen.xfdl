@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <FDL version="1.5">
   <TypeDefinition url="..\default_typedef.xml"/>
-  <Form id="base_hello" left="0" top="0" width="930" height="1191" titletext="Base::base_hello">
+  <Form id="base_hello" left="0" top="0" width="930" height="1191" titletext="Base::base_hello" onload="base_hello_onload">
     <Layouts>
       <Layout>
         <Edit id="edit_hello" taborder="0" left="525" top="66" width="167" height="28" value="Hello"/>
@@ -211,9 +211,10 @@
         <Button id="Button03" taborder="19" text="TreeWithGrid" left="2.04%" top="912" right="82.8%" height="31" onclick="Button03_onclick"/>
         <Button id="Button04" taborder="20" text="tabMenu" left="20.11%" top="912" right="64.73%" height="31" onclick="Button04_onclick"/>
         <Button id="Button05" taborder="21" text="FileDialog" left="37.85%" top="912" right="46.99%" height="31" onclick="Button05_onclick"/>
-        <Button id="Button06" taborder="22" text="menuPopup" left="55.05%" top="912" right="29.78%" height="31" onclick="Button06_onclick"/>
+        <Button id="Button06" taborder="22" text="DebuggingTest" left="55.05%" top="912" right="29.78%" height="31" onclick="Button06_onclick"/>
         <Button id="Button07" taborder="23" text="etc" left="72.26%" top="912" right="12.58%" height="31" onclick="Button07_onclick"/>
         <Button id="Button08" taborder="24" text="etcExample1" left="2.04%" top="960" right="82.8%" height="31" onclick="Button08_onclick"/>
+        <Button id="Button09" taborder="25" text="Grid paging" left="20.11%" top="960" right="64.73%" height="31" onclick="Button09_onclick"/>
       </Layout>
     </Layouts>
     <Objects>
@@ -428,6 +429,16 @@ this.Button07_onclick = function(obj:Button, e:nexacro.ClickEventInfo)
 this.Button08_onclick = function(obj:Button, e:nexacro.ClickEventInfo)
 {
 	this.go("Base::etcExample1.xfdl");
+}
+
+this.base_hello_onload = function(obj:Form, e:nexacro.LoadEventInfo)
+{
+	trace("HelloScreen is first view Test");
+}
+
+this.Button09_onclick = function(obj:Button, e:nexacro.ClickEventInfo)
+{
+	this.go("Base::GridPaging.xfdl");
 }
 ]]></Script>
   </Form>
