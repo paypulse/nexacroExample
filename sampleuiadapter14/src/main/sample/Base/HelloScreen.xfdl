@@ -215,6 +215,7 @@
         <Button id="Button07" taborder="23" text="etc" left="72.26%" top="912" right="12.58%" height="31" onclick="Button07_onclick"/>
         <Button id="Button08" taborder="24" text="etcExample1" left="2.04%" top="960" right="82.8%" height="31" onclick="Button08_onclick"/>
         <Button id="Button09" taborder="25" text="Grid paging" left="20.11%" top="960" right="64.73%" height="31" onclick="Button09_onclick"/>
+        <Button id="Button10" taborder="26" text="Button10" left="37.85%" top="960" right="46.99%" height="31"/>
       </Layout>
     </Layouts>
     <Objects>

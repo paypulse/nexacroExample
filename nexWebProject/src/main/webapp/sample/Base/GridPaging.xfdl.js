@@ -95,6 +95,7 @@
         	this.Grid00.set_binddataset("gridPaging");
         	/*이곳에 transaction이 원래 있어야 함*/
         	
+        	
         }
         
         });

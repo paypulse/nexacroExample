@@ -188,6 +188,11 @@
             obj.set_text("Grid paging");
             this.addChild(obj.name, obj);
 
+            obj = new Button("Button10", "absolute", "37.85%", "960", null, "31", "46.99%", null, this);
+            obj.set_taborder("26");
+            obj.set_text("Button10");
+            this.addChild(obj.name, obj);
+
 
             
             // Layout Functions
