@@ -300,6 +300,9 @@
         this.base_hello_onload = function(obj,e)
         {
         	trace("HelloScreen is first view Test");
+        	
+        	trace("this.getOwnerFrame : ",this.getOwnerFrame()["tabMenu"]);
+        	
         }
 
         this.Button09_onclick = function(obj,e)
