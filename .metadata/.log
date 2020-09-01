@@ -104,3 +104,361 @@ Created Time: 2020-08-21 15:45:30.922
 
 !ENTRY org.eclipse.m2e.logback.appender 2 0 2020-08-21 16:14:47.701
 !MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+!SESSION 2020-08-25 17:10:36.115 -----------------------------------------------
+eclipse.buildId=4.7.3.M20180330-0640
+java.version=1.8.0_261
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.core.resources 2 10035 2020-08-25 17:10:41.703
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.jface 2 0 2020-08-25 17:10:47.860
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2020-08-25 17:10:47.860
+!MESSAGE A conflict occurred for ALT+CTRL+T:
+Binding(ALT+CTRL+T,
+	ParameterizedCommand(Command(org.eclipse.tm.terminal.connector.local.command.launch,Open Local Terminal on Selection,
+		,
+		Category(org.eclipse.tm.terminal.view.ui.commands.category,Terminal Commands,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@5aef36a9,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+CTRL+T,
+	ParameterizedCommand(Command(org.eclipse.team.svn.ui.command.EditPropertiesCommand,Show Properties,
+		,
+		Category(org.eclipse.team.svn.ui.command.category,SVN,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@19544627,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 17 2020-08-25 17:11:00.066
+!MESSAGE Server ‘net.harawata.aer.mybatipse’ failed with exception: aer.ctrlflow.com. ; version: 2.0.7.v20170906-1327
+!STACK 0
+java.net.UnknownHostException: aer.ctrlflow.com
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(Unknown Source)
+	at java.net.InetAddress.getAddressesFromNameService(Unknown Source)
+	at java.net.InetAddress.getAllByName0(Unknown Source)
+	at java.net.InetAddress.getAllByName(Unknown Source)
+	at java.net.InetAddress.getAllByName(Unknown Source)
+	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:45)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:111)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:353)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:380)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:184)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:88)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.http.client.fluent.Request.internalExecute(Request.java:173)
+	at org.apache.http.client.fluent.Executor.execute(Executor.java:262)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.request(IO.java:170)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.refreshConfiguration(IO.java:64)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerConnection.startUp(ServerConnection.java:124)
+	at com.google.common.util.concurrent.AbstractIdleService$DelegateService$1.run(AbstractIdleService.java:62)
+	at com.google.common.util.concurrent.Callables$4.run(Callables.java:122)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY org.eclipse.egit.ui 2 0 2020-08-25 17:11:01.105
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\beaut'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 17 2020-08-25 17:11:02.469
+!MESSAGE Server ‘org.eclipse.epp.logging.aeri.ide.server’ failed with exception: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $. ; version: 2.0.7.v20170906-1327
+!STACK 0
+com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:224)
+	at com.google.gson.Gson.fromJson(Gson.java:888)
+	at com.google.gson.Gson.fromJson(Gson.java:853)
+	at com.google.gson.Gson.fromJson(Gson.java:802)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.json.Json.deserialize(Json.java:91)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.refreshConfiguration(IO.java:66)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerConnection.startUp(ServerConnection.java:124)
+	at com.google.common.util.concurrent.AbstractIdleService$DelegateService$1.run(AbstractIdleService.java:62)
+	at com.google.common.util.concurrent.Callables$4.run(Callables.java:122)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+	at com.google.gson.stream.JsonReader.beginObject(JsonReader.java:385)
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:213)
+	... 9 more
+
+!ENTRY org.eclipse.jst.jsp.core 4 4 2020-08-25 17:11:24.834
+!MESSAGE A workspace crash was detected. The previous session did not exit normally. Not using saved taglib indexes.
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2020-08-25 17:11:28.333
+!MESSAGE Failure to transfer com.nexacro.uiadapter17.spring:uiadapter17-spring-core:1.0.0-SNAPSHOT/maven-metadata.xml from http://repo1.maven.org/maven2/ was cached in the local repository, resolution will not be reattempted until the update interval of mvn2 has elapsed or updates are forced. Original error: Could not transfer metadata com.nexacro.uiadapter17.spring:uiadapter17-spring-core:1.0.0-SNAPSHOT/maven-metadata.xml from/to mvn2 (http://repo1.maven.org/maven2/): Failed to transfer http://repo1.maven.org/maven2/com/nexacro/uiadapter17/spring/uiadapter17-spring-core/1.0.0-SNAPSHOT/maven-metadata.xml. Error code 501, HTTPS Required
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2020-08-25 17:11:28.349
+!MESSAGE Failure to transfer com.nexacro.uiadapter17.spring:uiadapter17-spring-core:1.0.0-SNAPSHOT/maven-metadata.xml from http://repo1.maven.org/maven2/ was cached in the local repository, resolution will not be reattempted until the update interval of mvn2 has elapsed or updates are forced. Original error: Could not transfer metadata com.nexacro.uiadapter17.spring:uiadapter17-spring-core:1.0.0-SNAPSHOT/maven-metadata.xml from/to mvn2 (http://repo1.maven.org/maven2/): Failed to transfer http://repo1.maven.org/maven2/com/nexacro/uiadapter17/spring/uiadapter17-spring-core/1.0.0-SNAPSHOT/maven-metadata.xml. Error code 501, HTTPS Required
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2020-08-25 17:11:28.371
+!MESSAGE Failure to transfer com.nexacro.uiadapter17.spring:uiadapter17-spring:1.0.0-SNAPSHOT/maven-metadata.xml from http://repo1.maven.org/maven2/ was cached in the local repository, resolution will not be reattempted until the update interval of mvn2 has elapsed or updates are forced. Original error: Could not transfer metadata com.nexacro.uiadapter17.spring:uiadapter17-spring:1.0.0-SNAPSHOT/maven-metadata.xml from/to mvn2 (http://repo1.maven.org/maven2/): Failed to transfer http://repo1.maven.org/maven2/com/nexacro/uiadapter17/spring/uiadapter17-spring/1.0.0-SNAPSHOT/maven-metadata.xml. Error code 501, HTTPS Required
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2020-08-25 17:11:28.397
+!MESSAGE Failure to transfer com.nexacro:nexacro17-xapi:1.0.0-SNAPSHOT/maven-metadata.xml from http://repo1.maven.org/maven2/ was cached in the local repository, resolution will not be reattempted until the update interval of mvn2 has elapsed or updates are forced. Original error: Could not transfer metadata com.nexacro:nexacro17-xapi:1.0.0-SNAPSHOT/maven-metadata.xml from/to mvn2 (http://repo1.maven.org/maven2/): Failed to transfer http://repo1.maven.org/maven2/com/nexacro/nexacro17-xapi/1.0.0-SNAPSHOT/maven-metadata.xml. Error code 501, HTTPS Required
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2020-08-25 17:11:28.408
+!MESSAGE Failure to transfer com.nexacro:nexacro17-xapi:1.0.0-SNAPSHOT/maven-metadata.xml from http://repo1.maven.org/maven2/ was cached in the local repository, resolution will not be reattempted until the update interval of mvn2 has elapsed or updates are forced. Original error: Could not transfer metadata com.nexacro:nexacro17-xapi:1.0.0-SNAPSHOT/maven-metadata.xml from/to mvn2 (http://repo1.maven.org/maven2/): Failed to transfer http://repo1.maven.org/maven2/com/nexacro/nexacro17-xapi/1.0.0-SNAPSHOT/maven-metadata.xml. Error code 501, HTTPS Required
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2020-08-25 17:11:28.488
+!MESSAGE Failure to transfer com.nexacro.uiadapter17.spring:uiadapter17-spring-dataaccess:1.0.0-SNAPSHOT/maven-metadata.xml from http://repo1.maven.org/maven2/ was cached in the local repository, resolution will not be reattempted until the update interval of mvn2 has elapsed or updates are forced. Original error: Could not transfer metadata com.nexacro.uiadapter17.spring:uiadapter17-spring-dataaccess:1.0.0-SNAPSHOT/maven-metadata.xml from/to mvn2 (http://repo1.maven.org/maven2/): Failed to transfer http://repo1.maven.org/maven2/com/nexacro/uiadapter17/spring/uiadapter17-spring-dataaccess/1.0.0-SNAPSHOT/maven-metadata.xml. Error code 501, HTTPS Required
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2020-08-25 17:11:28.498
+!MESSAGE Failure to transfer com.nexacro.uiadapter17.spring:uiadapter17-spring-dataaccess:1.0.0-SNAPSHOT/maven-metadata.xml from http://repo1.maven.org/maven2/ was cached in the local repository, resolution will not be reattempted until the update interval of mvn2 has elapsed or updates are forced. Original error: Could not transfer metadata com.nexacro.uiadapter17.spring:uiadapter17-spring-dataaccess:1.0.0-SNAPSHOT/maven-metadata.xml from/to mvn2 (http://repo1.maven.org/maven2/): Failed to transfer http://repo1.maven.org/maven2/com/nexacro/uiadapter17/spring/uiadapter17-spring-dataaccess/1.0.0-SNAPSHOT/maven-metadata.xml. Error code 501, HTTPS Required
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2020-08-25 17:11:28.520
+!MESSAGE Failure to transfer com.nexacro.uiadapter17.spring:uiadapter17-spring-excel:1.0.0-SNAPSHOT/maven-metadata.xml from http://repo1.maven.org/maven2/ was cached in the local repository, resolution will not be reattempted until the update interval of mvn2 has elapsed or updates are forced. Original error: Could not transfer metadata com.nexacro.uiadapter17.spring:uiadapter17-spring-excel:1.0.0-SNAPSHOT/maven-metadata.xml from/to mvn2 (http://repo1.maven.org/maven2/): Failed to transfer http://repo1.maven.org/maven2/com/nexacro/uiadapter17/spring/uiadapter17-spring-excel/1.0.0-SNAPSHOT/maven-metadata.xml. Error code 501, HTTPS Required
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2020-08-25 17:11:28.530
+!MESSAGE Failure to transfer com.nexacro.uiadapter17.spring:uiadapter17-spring-excel:1.0.0-SNAPSHOT/maven-metadata.xml from http://repo1.maven.org/maven2/ was cached in the local repository, resolution will not be reattempted until the update interval of mvn2 has elapsed or updates are forced. Original error: Could not transfer metadata com.nexacro.uiadapter17.spring:uiadapter17-spring-excel:1.0.0-SNAPSHOT/maven-metadata.xml from/to mvn2 (http://repo1.maven.org/maven2/): Failed to transfer http://repo1.maven.org/maven2/com/nexacro/uiadapter17/spring/uiadapter17-spring-excel/1.0.0-SNAPSHOT/maven-metadata.xml. Error code 501, HTTPS Required
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2020-08-25 17:11:28.552
+!MESSAGE Failure to transfer com.nexacro:nexacro17-xeni:1.0.0-SNAPSHOT/maven-metadata.xml from http://repo1.maven.org/maven2/ was cached in the local repository, resolution will not be reattempted until the update interval of mvn2 has elapsed or updates are forced. Original error: Could not transfer metadata com.nexacro:nexacro17-xeni:1.0.0-SNAPSHOT/maven-metadata.xml from/to mvn2 (http://repo1.maven.org/maven2/): Failed to transfer http://repo1.maven.org/maven2/com/nexacro/nexacro17-xeni/1.0.0-SNAPSHOT/maven-metadata.xml. Error code 501, HTTPS Required
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2020-08-25 17:11:28.562
+!MESSAGE Failure to transfer com.nexacro:nexacro17-xeni:1.0.0-SNAPSHOT/maven-metadata.xml from http://repo1.maven.org/maven2/ was cached in the local repository, resolution will not be reattempted until the update interval of mvn2 has elapsed or updates are forced. Original error: Could not transfer metadata com.nexacro:nexacro17-xeni:1.0.0-SNAPSHOT/maven-metadata.xml from/to mvn2 (http://repo1.maven.org/maven2/): Failed to transfer http://repo1.maven.org/maven2/com/nexacro/nexacro17-xeni/1.0.0-SNAPSHOT/maven-metadata.xml. Error code 501, HTTPS Required
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2020-08-25 17:11:29.275
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2020-08-25 17:11:29.353
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2020-08-25 17:11:37.448
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2020-08-25 17:11:37.526
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.update.configurator 4 0 2020-08-25 17:12:00.991
+!MESSAGE Can't find bundle for base name feature, locale ko_KR
+
+!ENTRY org.eclipse.update.configurator 4 0 2020-08-25 17:12:02.193
+!MESSAGE Can't find bundle for base name feature, locale ko_KR
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2020-08-26 11:31:40.973
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Exception in net.sourceforge.pmd.eclipse.plugin.PMDPlugin.stop() of bundle net.sourceforge.pmd.eclipse.plugin.
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.stop(BundleContextImpl.java:855)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.stopWorker0(EquinoxBundle.java:947)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.stopWorker(EquinoxBundle.java:314)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.decStartLevel(ModuleContainer.java:1675)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1594)
+	at org.eclipse.osgi.container.SystemModule.stopWorker(SystemModule.java:270)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule.stopWorker(EquinoxBundle.java:147)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.SystemModule.stop(SystemModule.java:202)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule$1.run(EquinoxBundle.java:165)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.ExceptionInInitializerError
+	at net.sourceforge.pmd.eclipse.plugin.PMDPlugin.stop(PMDPlugin.java:382)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:835)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:1)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.stop(BundleContextImpl.java:828)
+	... 13 more
+Caused by: java.lang.NullPointerException
+	at net.sourceforge.pmd.eclipse.ui.priority.PriorityDescriptorCache.preferencesManager(PriorityDescriptorCache.java:32)
+	at net.sourceforge.pmd.eclipse.ui.priority.PriorityDescriptorCache.loadFromPreferences(PriorityDescriptorCache.java:43)
+	at net.sourceforge.pmd.eclipse.ui.priority.PriorityDescriptorCache.<init>(PriorityDescriptorCache.java:28)
+	at net.sourceforge.pmd.eclipse.ui.priority.PriorityDescriptorCache.<clinit>(PriorityDescriptorCache.java:24)
+	... 18 more
+Root exception:
+java.lang.ExceptionInInitializerError
+	at net.sourceforge.pmd.eclipse.plugin.PMDPlugin.stop(PMDPlugin.java:382)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:835)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:1)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.stop(BundleContextImpl.java:828)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.stopWorker0(EquinoxBundle.java:947)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.stopWorker(EquinoxBundle.java:314)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.decStartLevel(ModuleContainer.java:1675)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1594)
+	at org.eclipse.osgi.container.SystemModule.stopWorker(SystemModule.java:270)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule.stopWorker(EquinoxBundle.java:147)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.SystemModule.stop(SystemModule.java:202)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule$1.run(EquinoxBundle.java:165)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.NullPointerException
+	at net.sourceforge.pmd.eclipse.ui.priority.PriorityDescriptorCache.preferencesManager(PriorityDescriptorCache.java:32)
+	at net.sourceforge.pmd.eclipse.ui.priority.PriorityDescriptorCache.loadFromPreferences(PriorityDescriptorCache.java:43)
+	at net.sourceforge.pmd.eclipse.ui.priority.PriorityDescriptorCache.<init>(PriorityDescriptorCache.java:28)
+	at net.sourceforge.pmd.eclipse.ui.priority.PriorityDescriptorCache.<clinit>(PriorityDescriptorCache.java:24)
+	... 18 more
+!SESSION 2020-09-01 10:44:35.245 -----------------------------------------------
+eclipse.buildId=4.7.3.M20180330-0640
+java.version=1.8.0_261
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Framework arguments:  -product org.eclipse.epp.package.jee.product -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product -data C:\eGovFrameDev-3.8.0-64bit\workspace_nexacro -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.jface 2 0 2020-09-01 10:44:39.295
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2020-09-01 10:44:39.295
+!MESSAGE A conflict occurred for ALT+CTRL+T:
+Binding(ALT+CTRL+T,
+	ParameterizedCommand(Command(org.eclipse.tm.terminal.connector.local.command.launch,Open Local Terminal on Selection,
+		,
+		Category(org.eclipse.tm.terminal.view.ui.commands.category,Terminal Commands,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@4c131823,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+CTRL+T,
+	ParameterizedCommand(Command(org.eclipse.team.svn.ui.command.EditPropertiesCommand,Show Properties,
+		,
+		Category(org.eclipse.team.svn.ui.command.category,SVN,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@2453cbb7,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 17 2020-09-01 10:44:46.145
+!MESSAGE Server ‘net.harawata.aer.mybatipse’ failed with exception: aer.ctrlflow.com. ; version: 2.0.7.v20170906-1327
+!STACK 0
+java.net.UnknownHostException: aer.ctrlflow.com
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(Unknown Source)
+	at java.net.InetAddress.getAddressesFromNameService(Unknown Source)
+	at java.net.InetAddress.getAllByName0(Unknown Source)
+	at java.net.InetAddress.getAllByName(Unknown Source)
+	at java.net.InetAddress.getAllByName(Unknown Source)
+	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:45)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:111)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:353)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:380)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:184)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:88)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.http.client.fluent.Request.internalExecute(Request.java:173)
+	at org.apache.http.client.fluent.Executor.execute(Executor.java:262)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.request(IO.java:170)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.refreshConfiguration(IO.java:64)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerConnection.startUp(ServerConnection.java:124)
+	at com.google.common.util.concurrent.AbstractIdleService$DelegateService$1.run(AbstractIdleService.java:62)
+	at com.google.common.util.concurrent.Callables$4.run(Callables.java:122)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY org.eclipse.egit.ui 2 0 2020-09-01 10:44:46.368
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\beaut'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 17 2020-09-01 10:44:48.936
+!MESSAGE Server ‘org.eclipse.epp.logging.aeri.ide.server’ failed with exception: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $. ; version: 2.0.7.v20170906-1327
+!STACK 0
+com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:224)
+	at com.google.gson.Gson.fromJson(Gson.java:888)
+	at com.google.gson.Gson.fromJson(Gson.java:853)
+	at com.google.gson.Gson.fromJson(Gson.java:802)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.json.Json.deserialize(Json.java:91)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.refreshConfiguration(IO.java:66)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerConnection.startUp(ServerConnection.java:124)
+	at com.google.common.util.concurrent.AbstractIdleService$DelegateService$1.run(AbstractIdleService.java:62)
+	at com.google.common.util.concurrent.Callables$4.run(Callables.java:122)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+	at com.google.gson.stream.JsonReader.beginObject(JsonReader.java:385)
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:213)
+	... 9 more
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2020-09-01 10:44:50.051
+!MESSAGE Failure to transfer com.nexacro.uiadapter17.spring:uiadapter17-spring-core:1.0.0-SNAPSHOT/maven-metadata.xml from http://repo1.maven.org/maven2/ was cached in the local repository, resolution will not be reattempted until the update interval of mvn2 has elapsed or updates are forced. Original error: Could not transfer metadata com.nexacro.uiadapter17.spring:uiadapter17-spring-core:1.0.0-SNAPSHOT/maven-metadata.xml from/to mvn2 (http://repo1.maven.org/maven2/): Failed to transfer http://repo1.maven.org/maven2/com/nexacro/uiadapter17/spring/uiadapter17-spring-core/1.0.0-SNAPSHOT/maven-metadata.xml. Error code 501, HTTPS Required
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2020-09-01 10:44:50.066
+!MESSAGE Failure to transfer com.nexacro.uiadapter17.spring:uiadapter17-spring-core:1.0.0-SNAPSHOT/maven-metadata.xml from http://repo1.maven.org/maven2/ was cached in the local repository, resolution will not be reattempted until the update interval of mvn2 has elapsed or updates are forced. Original error: Could not transfer metadata com.nexacro.uiadapter17.spring:uiadapter17-spring-core:1.0.0-SNAPSHOT/maven-metadata.xml from/to mvn2 (http://repo1.maven.org/maven2/): Failed to transfer http://repo1.maven.org/maven2/com/nexacro/uiadapter17/spring/uiadapter17-spring-core/1.0.0-SNAPSHOT/maven-metadata.xml. Error code 501, HTTPS Required
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2020-09-01 10:44:50.091
+!MESSAGE Failure to transfer com.nexacro.uiadapter17.spring:uiadapter17-spring:1.0.0-SNAPSHOT/maven-metadata.xml from http://repo1.maven.org/maven2/ was cached in the local repository, resolution will not be reattempted until the update interval of mvn2 has elapsed or updates are forced. Original error: Could not transfer metadata com.nexacro.uiadapter17.spring:uiadapter17-spring:1.0.0-SNAPSHOT/maven-metadata.xml from/to mvn2 (http://repo1.maven.org/maven2/): Failed to transfer http://repo1.maven.org/maven2/com/nexacro/uiadapter17/spring/uiadapter17-spring/1.0.0-SNAPSHOT/maven-metadata.xml. Error code 501, HTTPS Required
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2020-09-01 10:44:50.122
+!MESSAGE Failure to transfer com.nexacro:nexacro17-xapi:1.0.0-SNAPSHOT/maven-metadata.xml from http://repo1.maven.org/maven2/ was cached in the local repository, resolution will not be reattempted until the update interval of mvn2 has elapsed or updates are forced. Original error: Could not transfer metadata com.nexacro:nexacro17-xapi:1.0.0-SNAPSHOT/maven-metadata.xml from/to mvn2 (http://repo1.maven.org/maven2/): Failed to transfer http://repo1.maven.org/maven2/com/nexacro/nexacro17-xapi/1.0.0-SNAPSHOT/maven-metadata.xml. Error code 501, HTTPS Required
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2020-09-01 10:44:50.133
+!MESSAGE Failure to transfer com.nexacro:nexacro17-xapi:1.0.0-SNAPSHOT/maven-metadata.xml from http://repo1.maven.org/maven2/ was cached in the local repository, resolution will not be reattempted until the update interval of mvn2 has elapsed or updates are forced. Original error: Could not transfer metadata com.nexacro:nexacro17-xapi:1.0.0-SNAPSHOT/maven-metadata.xml from/to mvn2 (http://repo1.maven.org/maven2/): Failed to transfer http://repo1.maven.org/maven2/com/nexacro/nexacro17-xapi/1.0.0-SNAPSHOT/maven-metadata.xml. Error code 501, HTTPS Required
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2020-09-01 10:44:50.228
+!MESSAGE Failure to transfer com.nexacro.uiadapter17.spring:uiadapter17-spring-dataaccess:1.0.0-SNAPSHOT/maven-metadata.xml from http://repo1.maven.org/maven2/ was cached in the local repository, resolution will not be reattempted until the update interval of mvn2 has elapsed or updates are forced. Original error: Could not transfer metadata com.nexacro.uiadapter17.spring:uiadapter17-spring-dataaccess:1.0.0-SNAPSHOT/maven-metadata.xml from/to mvn2 (http://repo1.maven.org/maven2/): Failed to transfer http://repo1.maven.org/maven2/com/nexacro/uiadapter17/spring/uiadapter17-spring-dataaccess/1.0.0-SNAPSHOT/maven-metadata.xml. Error code 501, HTTPS Required
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2020-09-01 10:44:50.241
+!MESSAGE Failure to transfer com.nexacro.uiadapter17.spring:uiadapter17-spring-dataaccess:1.0.0-SNAPSHOT/maven-metadata.xml from http://repo1.maven.org/maven2/ was cached in the local repository, resolution will not be reattempted until the update interval of mvn2 has elapsed or updates are forced. Original error: Could not transfer metadata com.nexacro.uiadapter17.spring:uiadapter17-spring-dataaccess:1.0.0-SNAPSHOT/maven-metadata.xml from/to mvn2 (http://repo1.maven.org/maven2/): Failed to transfer http://repo1.maven.org/maven2/com/nexacro/uiadapter17/spring/uiadapter17-spring-dataaccess/1.0.0-SNAPSHOT/maven-metadata.xml. Error code 501, HTTPS Required
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2020-09-01 10:44:50.274
+!MESSAGE Failure to transfer com.nexacro.uiadapter17.spring:uiadapter17-spring-excel:1.0.0-SNAPSHOT/maven-metadata.xml from http://repo1.maven.org/maven2/ was cached in the local repository, resolution will not be reattempted until the update interval of mvn2 has elapsed or updates are forced. Original error: Could not transfer metadata com.nexacro.uiadapter17.spring:uiadapter17-spring-excel:1.0.0-SNAPSHOT/maven-metadata.xml from/to mvn2 (http://repo1.maven.org/maven2/): Failed to transfer http://repo1.maven.org/maven2/com/nexacro/uiadapter17/spring/uiadapter17-spring-excel/1.0.0-SNAPSHOT/maven-metadata.xml. Error code 501, HTTPS Required
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2020-09-01 10:44:50.289
+!MESSAGE Failure to transfer com.nexacro.uiadapter17.spring:uiadapter17-spring-excel:1.0.0-SNAPSHOT/maven-metadata.xml from http://repo1.maven.org/maven2/ was cached in the local repository, resolution will not be reattempted until the update interval of mvn2 has elapsed or updates are forced. Original error: Could not transfer metadata com.nexacro.uiadapter17.spring:uiadapter17-spring-excel:1.0.0-SNAPSHOT/maven-metadata.xml from/to mvn2 (http://repo1.maven.org/maven2/): Failed to transfer http://repo1.maven.org/maven2/com/nexacro/uiadapter17/spring/uiadapter17-spring-excel/1.0.0-SNAPSHOT/maven-metadata.xml. Error code 501, HTTPS Required
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2020-09-01 10:44:50.318
+!MESSAGE Failure to transfer com.nexacro:nexacro17-xeni:1.0.0-SNAPSHOT/maven-metadata.xml from http://repo1.maven.org/maven2/ was cached in the local repository, resolution will not be reattempted until the update interval of mvn2 has elapsed or updates are forced. Original error: Could not transfer metadata com.nexacro:nexacro17-xeni:1.0.0-SNAPSHOT/maven-metadata.xml from/to mvn2 (http://repo1.maven.org/maven2/): Failed to transfer http://repo1.maven.org/maven2/com/nexacro/nexacro17-xeni/1.0.0-SNAPSHOT/maven-metadata.xml. Error code 501, HTTPS Required
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2020-09-01 10:44:50.332
+!MESSAGE Failure to transfer com.nexacro:nexacro17-xeni:1.0.0-SNAPSHOT/maven-metadata.xml from http://repo1.maven.org/maven2/ was cached in the local repository, resolution will not be reattempted until the update interval of mvn2 has elapsed or updates are forced. Original error: Could not transfer metadata com.nexacro:nexacro17-xeni:1.0.0-SNAPSHOT/maven-metadata.xml from/to mvn2 (http://repo1.maven.org/maven2/): Failed to transfer http://repo1.maven.org/maven2/com/nexacro/nexacro17-xeni/1.0.0-SNAPSHOT/maven-metadata.xml. Error code 501, HTTPS Required
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2020-09-01 10:44:51.137
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2020-09-01 10:44:51.164
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2020-09-01 10:45:02.348
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2020-09-01 10:45:02.358
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2020-09-01 10:45:34.094
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2020-09-01 10:45:34.102
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2020-09-01 10:45:35.251
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2020-09-01 10:45:35.258
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.update.configurator 4 0 2020-09-01 10:45:48.104
+!MESSAGE Can't find bundle for base name feature, locale ko_KR
+
+!ENTRY org.eclipse.update.configurator 4 0 2020-09-01 10:45:48.664
+!MESSAGE Can't find bundle for base name feature, locale ko_KR
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2020-09-01 10:46:25.453
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2020-09-01 10:46:25.463
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2020-09-01 10:46:35.535
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2020-09-01 10:46:35.544
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!

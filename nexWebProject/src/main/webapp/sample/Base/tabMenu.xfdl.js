@@ -187,7 +187,37 @@
         
         // User Script
         this.registerScript("tabMenu.xfdl", function(exports) {
+        this.getBindColumnIDByIndex = function(grid,index) 
+        {
+          var text = "";
+          var columnid = null;
+          var subCell = grid.getCellProperty("body", index, "subcell");
+          if ( subCell > 0 )
+          {
+            text = grid.getSubCellProperty("body", index, 0, "text");
+          }
+          else
+          {
+            text = grid.getCellProperty("body", index, "text");
+          }
+          
+          if ( text && text.length > 0 )
+          {
+            if ( text.search(/^bind:/) > -1 ) 
+            {
+              columnid = text.replace(/^bind:/, "");
+            }  
+            else if ( text.search(/^BIND\(/) > -1 ) 
+            {  
+              columnid = text.replace(/^BIND\(/, "");
+              columnid = columnid.substr(0, columnid.length-1);
+            } 
+          }
+          
+          return columnid;
+        }
 
+        
         this.Button00_onclick = function(obj,e)
         {
         	this.go("Base::HelloScreen.xfdl");
@@ -223,8 +253,12 @@
         		var addcopyrow = this.cp_emp.addRow();
         		this.cp_emp.copyRow(addcopyrow, this.ds_emp,this.ds_emp.rowposition);
         		
-        		
         	}
+        	
+        	//Grid Cell Click시 Cell value 가져오기
+        	//var columnId = this.getBindColumnIDByIndex(obj, e.cell);
+        	
+        	
         }
         
         });
