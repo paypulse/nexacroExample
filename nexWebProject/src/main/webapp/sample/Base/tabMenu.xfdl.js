@@ -37,12 +37,12 @@
             
             // UI Components Initialize
             obj = new Button("Button00", "absolute", "624", "12", "119", "36", null, null, this);
-            obj.set_taborder("0");
+            obj.set_taborder("1");
             obj.set_text("←Back");
             this.addChild(obj.name, obj);
 
             obj = new Tab("tabMenu", "absolute", "35", "373", "709", "231", null, null, this);
-            obj.set_taborder("1");
+            obj.set_taborder("0");
             obj.set_tabindex("0");
             obj.set_scrollbars("autoboth");
             obj.set_multiline("true");
@@ -134,6 +134,15 @@
             obj.set_binddataset("cp_emp");
             obj._setContents("<Formats><Format id=\"default\"><Columns><Column size=\"80\"/><Column size=\"80\"/><Column size=\"80\"/><Column size=\"80\"/><Column size=\"80\"/><Column size=\"80\"/><Column size=\"80\"/><Column size=\"80\"/></Columns><Rows><Row size=\"24\" band=\"head\"/><Row size=\"24\"/></Rows><Band id=\"head\"><Cell text=\"EMPL_ID\"/><Cell col=\"1\" text=\"FULL_NAME\"/><Cell col=\"2\" text=\"DEPT_ID\"/><Cell col=\"3\" text=\"HIRE_DATE\"/><Cell col=\"4\" text=\"GENDER\"/><Cell col=\"5\" text=\"MARRIED\"/><Cell col=\"6\" text=\"SALARY\"/><Cell col=\"7\" text=\"EMPL_MEMO\"/></Band><Band id=\"body\"><Cell text=\"bind:EMPL_ID\" mask=\"AA-###\"/><Cell col=\"1\" text=\"bind:FULL_NAME\"/><Cell col=\"2\" text=\"bind:DEPT_ID\"/><Cell col=\"3\" text=\"bind:HIRE_DATE\"/><Cell col=\"4\" displaytype=\"normal\" text=\"bind:GENDER\"/><Cell col=\"5\" displaytype=\"checkbox\" text=\"bind:MARRIED\"/><Cell col=\"6\" text=\"bind:SALARY\"/><Cell col=\"7\" text=\"bind:EMPL_MEMO\"/></Band></Format></Formats>");
             this.tabMenu.tabpage2.addChild(obj.name, obj);
+            obj = new Tabpage("tabpage3", this.tabMenu);
+            obj.set_text("tabpage3");
+            this.tabMenu.addChild(obj.name, obj);
+            obj = new Tabpage("tabpage4", this.tabMenu);
+            obj.set_text("tabpage4");
+            this.tabMenu.addChild(obj.name, obj);
+            obj = new Tabpage("tabpage5", this.tabMenu);
+            obj.set_text("tabpage5");
+            this.tabMenu.addChild(obj.name, obj);
 
             obj = new Grid("Grid00", "absolute", "33", "79", "711", "257", null, null, this);
             obj.set_taborder("2");
@@ -225,7 +234,8 @@
 
         this.Grid00_oncellclick = function(obj,e)
         {	
-        	
+        	// Grid button click 
+        	/*
         	if(this.Grid00.getCellProperty("body",e.cell,"displaytype") == "button")
         	{
         		//Grid의 상세보기 버튼이 눌리면 화면에 보여줘라
@@ -253,11 +263,21 @@
         		var addcopyrow = this.cp_emp.addRow();
         		this.cp_emp.copyRow(addcopyrow, this.ds_emp,this.ds_emp.rowposition);
         		
-        	}
+        	}*/
         	
         	//Grid Cell Click시 Cell value 가져오기
-        	//var columnId = this.getBindColumnIDByIndex(obj, e.cell);
+        	var columnId = this.getBindColumnIDByIndex(obj, e.cell);
+        	if(columnId == "MARRIED")
+        	{
+        		this.tabMenu.set_taborder(3);
+        		this.tabMenu.set_tabindex(3);
+        		this.tabMenu.set_visible("true");
+        		trace(this.tabMenu.getTabpageCount());
         	
+              
+                //this.Tab00.moveTabpage(dragTabIndex, dropTabIndex);
+        	
+        	}
         	
         }
         

@@ -4,8 +4,8 @@
   <Form id="tabMenu" left="0" top="0" width="764" height="640" titletext="Base::tabMenu">
     <Layouts>
       <Layout>
-        <Button id="Button00" taborder="0" text="←Back" left="624" top="12" width="119" height="36" onclick="Button00_onclick"/>
-        <Tab id="tabMenu" taborder="1" left="35" top="373" width="709" height="231" tabindex="0" scrollbars="autoboth" multiline="true" visible="false">
+        <Button id="Button00" taborder="1" text="←Back" left="624" top="12" width="119" height="36" onclick="Button00_onclick"/>
+        <Tab id="tabMenu" taborder="0" left="35" top="373" width="709" height="231" tabindex="0" scrollbars="autoboth" multiline="true" visible="false">
           <Tabpages>
             <Tabpage id="tabpage1" text="Form Binding">
               <Layouts>
@@ -92,6 +92,9 @@
                 </Layout>
               </Layouts>
             </Tabpage>
+            <Tabpage id="tabpage3" text="tabpage3"/>
+            <Tabpage id="tabpage4" text="tabpage4"/>
+            <Tabpage id="tabpage5" text="tabpage5"/>
           </Tabpages>
         </Tab>
         <Grid id="Grid00" taborder="2" binddataset="ds_emp" oncellclick="Grid00_oncellclick" left="33" top="79" width="711" height="257">
@@ -273,7 +276,8 @@ this.Button00_onclick = function(obj:Button, e:nexacro.ClickEventInfo)
 
 this.Grid00_oncellclick = function(obj:Grid, e:nexacro.GridClickEventInfo)
 {	
-	
+	// Grid button click 
+	/*
 	if(this.Grid00.getCellProperty("body",e.cell,"displaytype") == "button")
 	{
 		//Grid의 상세보기 버튼이 눌리면 화면에 보여줘라
@@ -301,11 +305,21 @@ this.Grid00_oncellclick = function(obj:Grid, e:nexacro.GridClickEventInfo)
 		var addcopyrow = this.cp_emp.addRow();
 		this.cp_emp.copyRow(addcopyrow, this.ds_emp,this.ds_emp.rowposition);
 		
-	}
+	}*/
 	
 	//Grid Cell Click시 Cell value 가져오기
-	//var columnId = this.getBindColumnIDByIndex(obj, e.cell);
+	var columnId = this.getBindColumnIDByIndex(obj, e.cell);
+	if(columnId == "MARRIED")
+	{
+		this.tabMenu.set_taborder(3);
+		this.tabMenu.set_tabindex(3);
+		this.tabMenu.set_visible("true");
+		trace(this.tabMenu.getTabpageCount());
 	
+      
+        //this.Tab00.moveTabpage(dragTabIndex, dropTabIndex);
+	
+	}
 	
 }
 ]]></Script>
